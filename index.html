@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <title>Redwood Restaurant| Sizzling-Hot Kenyan Organic Dishes – Order via WhatsApp</title>
+    <meta name="description"
+        content="Organic nyama choma, legendary wraps & smokey irio — crafted fast, priced for the everyday champion. Order instantly on WhatsApp." />
+    <meta name="keywords"
+        content="Redwood, nyama choma, pork ribs, Kenyan food, organic, fast casual, Nairobi, WhatsApp order, affordable, healthy" />
+    <meta name="author" content="Redwood Restaurant" />
+    <link rel="canonical" href="https://redwood.co.ke" />
+
+    <meta property="og:title" content="Redwood | Fire‑Kissed Kenyan Organic Eats" />
+    <meta property="og:description"
+        content="Organic nyama choma, legendary wraps & smokey irio — crafted fast, priced for the everyday champion." />
+    <meta property="og:image"
+        content="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1200&q=80" />
+    <meta property="og:url" content="https://redwood.co.ke" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Redwood | Fire‑Kissed Kenyan Organic Eats" />
+    <meta name="twitter:description"
+        content="Organic nyama choma, legendary wraps & smokey irio — crafted fast, priced for the everyday champion." />
+    <meta name="twitter:image"
+        content="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1200&q=80" />
+
+    <script src="https://cdn.tailwindcss.com" defer>
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        media="print" onload="this.media='all'" />
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    </noscript>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Restaurant",
+            "name": "Redwood",
+            "description": "Organic nyama choma, legendary wraps & smokey irio — crafted fast, priced for the everyday champion.",
+            "url": "https://redwood.co.ke",
+            "telephone": "+254702555093",
+            "email": "harrisoncheruiyot04@gmail.com",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Biashara Street",
+                "addressLocality": "Nairobi",
+                "addressRegion": "Nairobi County",
+                "addressCountry": "KE"
+            },
+            "servesCuisine": "Kenyan",
+            "priceRange": "KES 100-500",
+            "openingHoursSpecification": [
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                    "opens": "10:00",
+                    "closes": "21:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Sunday",
+                    "opens": "11:00",
+                    "closes": "19:00"
+                }
+            ],
+            "sameAs": ["https://www.instagram.com/redwoodke", "https://www.tiktok.com/@redwoodke"]
+        }
+    </script>
+
+    <style>
+        :root {
+            --charcoal: #1A1814;
+            --sun-yellow: #F5C518;
+            --smokey-red: #8B3A3A;
+            --bone-white: #F5F0E8;
+            --forest-green: #2E4A3A;
+            --dark-card: #22201C;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--charcoal);
+            color: var(--bone-white);
+            margin: 0;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1,
+        h2,
+        h3,
+        .font-display {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            letter-spacing: -0.01em;
+        }
+
+        .text-yellow {
+            color: var(--sun-yellow);
+        }
+        .bg-yellow {
+            background-color: var(--sun-yellow);
+        }
+        .border-yellow {
+            border-color: var(--sun-yellow);
+        }
+        .bg-charcoal {
+            background-color: var(--charcoal);
+        }
+        .bg-dark-card {
+            background-color: var(--dark-card);
+        }
+        .bg-smokey {
+            background-color: var(--smokey-red);
+        }
+        .text-bone {
+            color: var(--bone-white);
+        }
+        .bg-bone {
+            background-color: var(--bone-white);
+        }
+        .border-smokey {
+            border-color: var(--smokey-red);
+        }
+        .text-forest {
+            color: var(--forest-green);
+        }
+        .bg-forest {
+            background-color: var(--forest-green);
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 16px;
+            z-index: 100;
+            background: var(--sun-yellow);
+            color: var(--charcoal);
+            padding: 10px 18px;
+            border-radius: 0 0 8px 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: top 0.25s ease;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+
+        .wa-float {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            width: 60px;
+            height: 60px;
+            background-color: var(--sun-yellow);
+            color: var(--charcoal);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 24px rgba(245, 197, 24, 0.5);
+            z-index: 50;
+            text-decoration: none;
+            animation: wa-pulse 2s infinite ease-in-out;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .wa-float:hover {
+            transform: scale(1.15);
+            box-shadow: 0 12px 28px rgba(245, 197, 24, 0.7);
+            animation: none;
+        }
+        .wa-float:focus-visible {
+            outline: 3px solid var(--sun-yellow);
+            outline-offset: 4px;
+            animation: none;
+        }
+        @keyframes wa-pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        @media (max-width: 640px) {
+            .wa-float {
+                bottom: 1rem;
+                right: 1rem;
+                width: 55px;
+                height: 55px;
+            }
+        }
+
+        .lazy-bg {
+            background-image: none !important;
+            background-color: #2a2722;
+        }
+
+        .filter-btn.active {
+            background-color: var(--sun-yellow);
+            color: var(--charcoal);
+            font-weight: 700;
+            box-shadow: 0 0 20px rgba(245, 197, 24, 0.3);
+        }
+        .filter-btn:focus-visible {
+            outline: 2px solid var(--sun-yellow);
+            outline-offset: 3px;
+        }
+
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(26, 24, 20, 0.4) 0%, rgba(26, 24, 20, 0.85) 100%);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .btn-outline-yellow {
+            border: 2px solid var(--sun-yellow);
+            color: var(--sun-yellow);
+            background: transparent;
+            transition: all 0.25s ease;
+        }
+        .btn-outline-yellow:hover {
+            background-color: rgba(245, 197, 24, 0.12);
+            transform: translateY(-1px);
+        }
+        .btn-outline-yellow:focus-visible {
+            outline: 2px solid var(--sun-yellow);
+            outline-offset: 3px;
+        }
+
+        .btn-primary {
+            background-color: var(--sun-yellow);
+            color: var(--charcoal);
+            font-weight: 600;
+            transition: all 0.25s ease;
+        }
+        .btn-primary:hover {
+            filter: brightness(1.1);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(245, 197, 24, 0.35);
+        }
+        .btn-primary:focus-visible {
+            outline: 3px solid var(--sun-yellow);
+            outline-offset: 3px;
+        }
+
+        .card-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible {
+            outline: 2px solid var(--sun-yellow);
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="sticky top-0 z-40 bg-charcoal/95 backdrop-blur-sm border-b border-white/10" role="banner">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 lg:h-20">
+                <a href="#" class="flex items-center space-x-2 focus-visible:outline-yellow" aria-label="Redwood Home">
+                    <span class="font-display text-2xl lg:text-3xl font-bold tracking-wide text-bone">Redwood Restaurant</span>
+                </a>
+                <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium" aria-label="Main navigation">
+                    <a href="#hero" class="hover:text-yellow transition-colors duration-200">Home</a>
+                    <a href="#signature" class="hover:text-yellow transition-colors duration-200">Menu</a>
+                    <a href="#story" class="hover:text-yellow transition-colors duration-200">Our Story</a>
+                    <a href="#contact" class="hover:text-yellow transition-colors duration-200">Contact</a>
+                </nav>
+                <div class="hidden lg:block">
+                    <a href="https://wa.me/254702555093?text=Hi%20Redwood!%20I%20want%20to%20order."
+                        target="_blank" rel="noopener noreferrer"
+                        class="btn-primary px-5 py-2.5 rounded-full text-sm inline-flex items-center gap-2">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i> Order Now
+                    </a>
+                </div>
+                <button id="menu-toggle" class="lg:hidden text-bone focus:outline-none p-2" aria-label="Open menu"
+                    aria-expanded="false" aria-controls="mobile-menu" type="button">
+                    <i class="fas fa-bars text-2xl" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="lg:hidden hidden bg-charcoal border-t border-white/10 px-4 pb-4" role="navigation"
+            aria-label="Mobile navigation">
+            <a href="#hero" class="block py-3 text-bone hover:text-yellow transition-colors duration-200">Home</a>
+            <a href="#signature" class="block py-3 text-bone hover:text-yellow transition-colors duration-200">Menu</a>
+            <a href="#story" class="block py-3 text-bone hover:text-yellow transition-colors duration-200">Our Story</a>
+            <a href="#contact" class="block py-3 text-bone hover:text-yellow transition-colors duration-200">Contact</a>
+            <a href="https://wa.me/254702555093?text=Hi%20Redwood!%20I%20want%20to%20order." target="_blank"
+                rel="noopener noreferrer"
+                class="mt-3 btn-primary py-3 rounded-full text-center flex items-center justify-center gap-2">
+                <i class="fab fa-whatsapp" aria-hidden="true"></i> Order via WhatsApp
+            </a>
+        </div>
+    </header>
+
+    <main id="main-content">
+
+        <section id="hero" class="relative h-screen flex items-center justify-center overflow-hidden"
+            aria-labelledby="hero-heading">
+            <div class="absolute inset-0 z-0">
+                <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1350&q=80"
+                    alt="Sizzling Kenyan grill with open flames and aromatic smoke"
+                    class="w-full h-full object-cover opacity-40" loading="eager" fetchpriority="high" />
+                <div class="hero-overlay absolute inset-0"></div>
+            </div>
+            <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+                <h1 id="hero-heading"
+                    class="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-bone mb-6">
+                    Sizzling-Hot. Kenyan‑grown.<br />Ready for you.
+                </h1>
+                <p class="text-lg sm:text-xl text-bone/80 max-w-2xl mx-auto mb-10">
+                    Organic nyama choma, legendary wraps & Steaming irio — crafted fast, priced for the everyday champion.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="https://wa.me/254702555093?text=Hi%20Redwood!%20I%20want%20to%20order%20some%20fire."
+                        target="_blank" rel="noopener noreferrer"
+                        class="btn-primary px-8 py-4 rounded-full text-lg inline-flex items-center justify-center gap-2">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i> Order via WhatsApp
+                    </a>
+                    <a href="#signature"
+                        class="btn-outline-yellow px-8 py-4 rounded-full text-lg inline-flex items-center justify-center">
+                        See the Menu
+                    </a>
+                </div>
+                <p class="mt-6 text-sm text-bone/60">Tap, text, eat. It's that fast.</p>
+            </div>
+        </section>
+
+        <section id="signature" class="py-20 bg-charcoal" aria-labelledby="signature-heading">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 id="signature-heading"
+                    class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-16 text-bone">
+                    The Crave Starts Here
+                </h2>
+                <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+                    <div class="bg-dark-card rounded-2xl overflow-hidden shadow-2xl card-lift">
+                        <img src="https://i.ibb.co/xSBqp0Dg/1784548006009.png"
+                            alt="Glazed Pork Ribs — 6-hour smoked, honey-glazed, served on smokey irio mash"
+                            class="w-full h-64 sm:h-80 object-cover" loading="lazy" />
+                        <div class="p-6 sm:p-8">
+                            <h3 class="font-display text-2xl sm:text-3xl font-bold mb-2">Glazed Pork Ribs</h3>
+                            <p class="text-bone/70 mb-4">6‑hour smoked, glazed with local honey & secret spices, served on
+                                smokey irio mash.</p>
+                            <p class="text-yellow font-bold text-xl mb-6">From KES 450</p>
+                            <a href="https://wa.me/254702555093?text=I'd%20like%20the%20Glazed%20Pork%20Ribs%20platter,%20please."
+                                target="_blank" rel="noopener noreferrer"
+                                class="btn-primary inline-flex items-center gap-2 px-6 py-3 rounded-full">
+                                <i class="fab fa-whatsapp" aria-hidden="true"></i> I Want This
+                            </a>
+                        </div>
+                    </div>
+                    <div class="bg-dark-card rounded-2xl overflow-hidden shadow-2xl card-lift">
+                        <img src="https://i.ibb.co/RTNdGT1q/1784543431198.png"
+                            alt="The Hustler's Wrap — flame-grilled nyama choma with pili pili and fresh kachumbari in a chapati"
+                            class="w-full h-64 sm:h-80 object-cover" loading="lazy" />
+                        <div class="p-6 sm:p-8">
+                            <h3 class="font-display text-2xl sm:text-3xl font-bold mb-2">The Hustler's Wrap</h3>
+                            <p class="text-bone/70 mb-4">Flame‑grilled nyama choma, house‑made pili pili fire, fresh
+                                kachumbari, rolled in a soft organic chapati.</p>
+                            <p class="text-yellow font-bold text-xl mb-6">From KES 350</p>
+                            <a href="https://wa.me/254702555093?text=One%20Hustler's%20Wrap%20for%20me!%20Extra%20pili%20pili%20please."
+                                target="_blank" rel="noopener noreferrer"
+                                class="btn-primary inline-flex items-center gap-2 px-6 py-3 rounded-full">
+                                <i class="fab fa-whatsapp" aria-hidden="true"></i> Wrap Me Up
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 bg-dark-card" aria-labelledby="trust-heading">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 id="trust-heading" class="sr-only">Why Choose Redwood</h2>
+                <div class="grid md:grid-cols-3 gap-10 text-center">
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 rounded-full bg-yellow/10 flex items-center justify-center mb-5">
+                            <i class="fas fa-leaf text-yellow text-2xl" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="font-display text-xl font-bold mb-2">100% Local Organic Produce</h3>
+                        <p class="text-bone/70 max-w-xs mx-auto">Sourced from Kenyan farms within 50km. No shortcuts,
+                            just clean fuel.</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 rounded-full bg-yellow/10 flex items-center justify-center mb-5">
+                            <i class="fas fa-fire text-yellow text-2xl" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="font-display text-xl font-bold mb-2">Fast Casual, Always Fresh</h3>
+                        <p class="text-bone/70 max-w-xs mx-auto">Grilled to order, packed in 7 minutes. Dine in or
+                            delivered to your desk.</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 rounded-full bg-yellow/10 flex items-center justify-center mb-5">
+                            <i class="fas fa-hand-holding-heart text-yellow text-2xl" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="font-display text-xl font-bold mb-2">Prices That Respect Your Hustle</h3>
+                        <p class="text-bone/70 max-w-xs mx-auto">Premium taste, street‑smart prices. From 350 KES.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-charcoal" aria-labelledby="how-it-works-heading">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 id="how-it-works-heading" class="font-display text-3xl sm:text-4xl font-bold text-center mb-16">How
+                    It Works</h2>
+                <div class="grid md:grid-cols-3 gap-10 text-center">
+                    <div class="flex flex-col items-center">
+                        <div class="w-20 h-20 rounded-full bg-yellow/20 flex items-center justify-center mb-5 text-2xl font-bold text-yellow"
+                            aria-hidden="true">1</div>
+                        <h3 class="font-display text-2xl font-bold mb-2">Pick Your Fire</h3>
+                        <p class="text-bone/70">Browse the menu and choose your ribs, wrap, or platter.</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-20 h-20 rounded-full bg-yellow/20 flex items-center justify-center mb-5 text-2xl font-bold text-yellow"
+                            aria-hidden="true">2</div>
+                        <h3 class="font-display text-2xl font-bold mb-2">Tap & Text</h3>
+                        <p class="text-bone/70">Hit the WhatsApp button – a pre‑filled order message pops up.</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-20 h-20 rounded-full bg-yellow/20 flex items-center justify-center mb-5 text-2xl font-bold text-yellow"
+                            aria-hidden="true">3</div>
+                        <h3 class="font-display text-2xl font-bold mb-2">Sizzle at Your Door</h3>
+                        <p class="text-bone/70">We confirm, cook, and deliver while it's still smoking.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-dark-card" id="full-menu" aria-labelledby="full-menu-heading">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 id="full-menu-heading" class="font-display text-3xl sm:text-4xl font-bold text-center mb-12">The
+                    Full Fire Menu</h2>
+                <div class="flex flex-wrap justify-center gap-3 mb-12" role="group" aria-label="Filter menu by category">
+                    <button class="filter-btn active px-5 py-2 rounded-full border border-yellow text-yellow font-medium text-sm transition"
+                        data-filter="all" type="button" aria-pressed="true">All</button>
+                    <button class="filter-btn px-5 py-2 rounded-full border border-yellow text-yellow font-medium text-sm transition"
+                        data-filter="pork" type="button" aria-pressed="false">Pork</button>
+                    <button class="filter-btn px-5 py-2 rounded-full border border-yellow text-yellow font-medium text-sm transition"
+                        data-filter="nyamachoma" type="button" aria-pressed="false">Nyama Choma</button>
+                    <button class="filter-btn px-5 py-2 rounded-full border border-yellow text-yellow font-medium text-sm transition"
+                        data-filter="wraps" type="button" aria-pressed="false">Wraps & Chapatis</button>
+                    <button class="filter-btn px-5 py-2 rounded-full border border-yellow text-yellow font-medium text-sm transition"
+                        data-filter="sides" type="button" aria-pressed="false">Sides & Irio</button>
+                </div>
+                <div id="menu-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-charcoal" aria-labelledby="testimonials-heading">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 id="testimonials-heading" class="font-display text-3xl sm:text-4xl font-bold text-center mb-16">Belly
+                    & Hustle Approved</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-dark-card p-6 rounded-2xl shadow-lg card-lift">
+                        <div class="text-yellow text-2xl mb-4" aria-label="5 out of 5 stars">★★★★★</div>
+                        <blockquote class="text-bone/80 italic mb-4">"No time for lunch meetings. Redwood wraps are my
+                            boardroom secret weapon. Chapati wrap, pili pili, done."</blockquote>
+                        <p class="font-semibold">— Brian, Advocate</p>
+                    </div>
+                    <div class="bg-dark-card p-6 rounded-2xl shadow-lg card-lift">
+                        <div class="text-yellow text-2xl mb-4" aria-label="5 out of 5 stars">★★★★★</div>
+                        <blockquote class="text-bone/80 italic mb-4">"Kwanza ile pork ribs… nikiorder delivery, inafika
+                            bado inasmoke. Affordable but feels like a treat."</blockquote>
+                        <p class="font-semibold">— Muthoni, Salon Owner</p>
+                    </div>
+                    <div class="bg-dark-card p-6 rounded-2xl shadow-lg card-lift">
+                        <div class="text-yellow text-2xl mb-4" aria-label="5 out of 5 stars">★★★★★</div>
+                        <blockquote class="text-bone/80 italic mb-4">"Finally, organic nyama choma that doesn't cost a
+                            fortune. My whole crew orders on Fridays."</blockquote>
+                        <p class="font-semibold">— Otieno, Site Foreman</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 bg-smokey" aria-labelledby="special-heading">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+                    <p id="special-heading" class="text-2xl sm:text-3xl font-display font-bold text-bone">🔥 Today's Fire
+                        Special</p>
+                    <img src="https://i.ibb.co/fYJVkFV7/1784544829697.png"
+                        alt="Today's special — Nyama choma platter for two with free ugali"
+                        class="w-32 h-32 object-cover rounded-xl shadow-lg" loading="lazy" />
+                    <p class="text-lg text-bone/90">Nyama choma platter for two + free Ugali</p>
+                </div>
+                <a href="https://wa.me/254702555093?text=SPECIAL" target="_blank" rel="noopener noreferrer"
+                    class="btn-primary inline-flex items-center gap-2 px-8 py-4 rounded-full text-lg">
+                    <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp 'SPECIAL'
+                </a>
+            </div>
+        </section>
+
+        <section id="story" class="py-20 bg-charcoal" aria-labelledby="story-heading">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 id="story-heading" class="font-display text-3xl sm:text-4xl font-bold mb-6">The Fire That
+                            Started It All</h2>
+                        <p class="text-bone/80 leading-relaxed mb-4">Growing up, nyama choma wasn't just food — it was
+                            celebration, community, and the smell of possibility. Redwood was born to make that fire
+                            accessible every day: fast, organic, and priced for the doers.</p>
+                        <p class="text-bone/80 leading-relaxed mb-6">We partner with local organic farmers within 50km.
+                            Our pork, our vegetables, our spices — all traceable, all clean. No shortcuts. Just the
+                            primal taste of Kenya, elevated.</p>
+                        <div class="flex flex-wrap gap-4">
+                            <span class="bg-yellow/10 text-yellow px-4 py-2 rounded-full text-sm font-medium">🌱 100%
+                                Organic</span>
+                            <span class="bg-yellow/10 text-yellow px-4 py-2 rounded-full text-sm font-medium">🇰🇪 Locally
+                                Sourced</span>
+                            <span class="bg-yellow/10 text-yellow px-4 py-2 rounded-full text-sm font-medium">🔥
+                                Fire‑Grilled</span>
+                        </div>
+                    </div>
+                    <div class="rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="https://i.ibb.co/MD1bbqbT/1784543596004.png"
+                            alt="Redwood's open-flame grill with organic meats and fresh ingredients"
+                            class="w-full h-auto object-cover" loading="lazy" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-20 bg-dark-card" aria-labelledby="contact-heading">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 id="contact-heading" class="font-display text-3xl sm:text-4xl font-bold mb-12">Find Your Flame</h2>
+                <div class="max-w-2xl mx-auto space-y-8 text-left">
+                    <div>
+                        <h3 class="font-display text-2xl font-bold mb-2">Visit Us</h3>
+                        <p class="text-bone/80">Nairobi CBD, Biashara Street</p>
+                        <p class="text-bone/60 text-sm">(Full address available on WhatsApp)</p>
+                    </div>
+                    <div>
+                        <h3 class="font-display text-2xl font-bold mb-2">Hours</h3>
+                        <p class="text-bone/80">Mon – Sat: 10:00 AM – 9:00 PM</p>
+                        <p class="text-bone/80">Sun: 11:00 AM – 7:00 PM</p>
+                    </div>
+                    <div>
+                        <h3 class="font-display text-2xl font-bold mb-2">Delivery Zones</h3>
+                        <p class="text-bone/80">CBD, Westlands, Kilimani, Upperhill, Parklands</p>
+                        <p class="text-bone/60 text-sm">Not sure? WhatsApp us your location.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <a href="https://wa.me/254702555093" target="_blank" rel="noopener noreferrer"
+                            class="text-yellow hover:text-yellow/80 transition-colors duration-200 inline-flex items-center gap-2">
+                            <i class="fab fa-whatsapp text-2xl" aria-hidden="true"></i>
+                            <span>+254 702 555 093</span>
+                        </a>
+                        <a href="mailto:harrisoncheruiyot04@gmail.com"
+                            class="text-yellow hover:text-yellow/80 transition-colors duration-200 inline-flex items-center gap-2">
+                            <i class="far fa-envelope text-2xl" aria-hidden="true"></i>
+                            <span>harrisoncheruiyot04@gmail.com</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-charcoal border-t border-white/10 py-12" role="contentinfo">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8 text-center md:text-left">
+                <div>
+                    <span class="font-display text-2xl font-bold text-bone">Redwood</span>
+                    <p class="text-bone/60 mt-2 text-sm">Fuel your hustle, naturally.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-3">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-bone/70">
+                        <li><a href="#hero" class="hover:text-yellow transition-colors duration-200">Home</a></li>
+                        <li><a href="#full-menu" class="hover:text-yellow transition-colors duration-200">Menu</a></li>
+                        <li><a href="#story" class="hover:text-yellow transition-colors duration-200">Our Story</a></li>
+                        <li><a href="#contact" class="hover:text-yellow transition-colors duration-200">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-3">Join the Tribe</h4>
+                    <p class="text-sm text-bone/70 mb-3">Get weekly specials & new dish alerts.</p>
+                    <form class="flex flex-col sm:flex-row gap-2"
+                        action="mailto:harrisoncheruiyot04@gmail.com" method="POST" enctype="text/plain">
+                        <label for="email-input" class="sr-only">Your email address</label>
+                        <input id="email-input" name="email" type="email" placeholder="Your email" required
+                            class="px-4 py-2 rounded-full bg-dark-card border border-white/20 text-bone placeholder:text-bone/40 focus:outline-none focus:border-yellow transition-colors duration-200" />
+                        <button type="submit"
+                            class="btn-primary px-6 py-2 rounded-full text-sm">Sign Up</button>
+                    </form>
+                    <div class="flex justify-center md:justify-start gap-4 mt-5 text-xl text-bone/60">
+                        <a href="https://www.instagram.com/redwoodke" target="_blank" rel="noopener noreferrer"
+                            class="hover:text-yellow transition-colors duration-200" aria-label="Follow Redwood on Instagram">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@redwoodke" target="_blank" rel="noopener noreferrer"
+                            class="hover:text-yellow transition-colors duration-200" aria-label="Follow Redwood on TikTok">
+                            <i class="fab fa-tiktok" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="hover:text-yellow transition-colors duration-200"
+                            aria-label="Find Redwood on Google">
+                            <i class="fab fa-google" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-10 pt-6 border-t border-white/10 text-center text-sm text-bone/50">
+                © 2025 Redwood. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/254702555093?text=Hi%20Redwood!%20I'd%20like%20to%20place%20an%20order." target="_blank"
+        rel="noopener noreferrer" class="wa-float" aria-label="Order now via WhatsApp">
+        <i class="fab fa-whatsapp text-2xl" aria-hidden="true"></i>
+    </a>
+
+    <script>
+        (function() {
+            const lazyBgObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const bg = entry.target.getAttribute('data-bg');
+                        if (bg) {
+                            entry.target.style.backgroundImage = `url('${bg}')`;
+                            entry.target.classList.remove('lazy-bg');
+                        }
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { rootMargin: '150px' });
+
+            function observeLazyBg(elements) {
+                elements.forEach(el => lazyBgObserver.observe(el));
+            }
+
+            observeLazyBg(document.querySelectorAll('.lazy-bg'));
+
+            const MENU_ITEMS = [
+                {
+                    name: 'Glazed Pork Ribs',
+                    desc: 'Smoked 6hrs, honey glaze, smokey irio mash.',
+                    price: '450',
+                    category: 'pork',
+                    img: 'https://i.ibb.co/xSBqp0Dg/1784548006009.png'
+                },
+                {
+                    name: 'Nyama Choma Platter',
+                    desc: 'Fire‑grilled beef, kachumbari, ugali or irio.',
+                    price: '500',
+                    category: 'nyamachoma',
+                    img: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=500&q=80'
+                },
+                {
+                    name: 'The Hustler\'s Wrap',
+                    desc: 'Nyama choma, pili pili, kachumbari in a chapati.',
+                    price: '250',
+                    category: 'wraps',
+                    img: 'https://i.ibb.co/RTNdGT1q/1784543431198.png'
+                },
+                {
+                    name: 'Chapati (5 pcs)',
+                    desc: 'Soft, organic, pan‑grilled chapati.',
+                    price: '150',
+                    category: 'wraps',
+                    img: 'https://i.ibb.co/v6rPTMxG/1784551237074.png'
+                },
+                {
+                    name: 'Steaming Irio',
+                    desc: 'Mashed peas, potatoes, corn, with a hint of smoke.',
+                    price: '200',
+                    category: 'sides',
+                    img: 'https://i.ibb.co/hF830wy1/1784542873230.png'
+                },
+                {
+                    name: 'Pork Sausages (5 pcs)',
+                    desc: 'Organic, coarse‑ground, grilled over open flame.',
+                    price: '250',
+                    category: 'pork',
+                    img: 'https://i.ibb.co/n8QfzCV6/1784543297457.png'
+                },
+                {
+                    name: 'Spicy Chicken Wings',
+                    desc: 'Marinated in pili pili, chargrilled.',
+                    price: '420',
+                    category: 'nyamachoma',
+                    img: 'https://i.ibb.co/B5g7NP43/1784551556649.png'
+                },
+                {
+                    name: 'Kachumbari Salad',
+                    desc: 'Fresh tomato, onion, cilantro, lime.',
+                    price: '150',
+                    category: 'sides',
+                    img: 'https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=500&q=80'
+                }
+            ];
+
+            const PHONE_NUMBER = '254702555093';
+            const WHATSAPP_BASE = `https://wa.me/${PHONE_NUMBER}?text=`;
+
+            function generateWhatsAppLink(itemName, price) {
+                const message = `I'd like to order ${itemName} (KES ${price}).`;
+                return `${WHATSAPP_BASE}${encodeURIComponent(message)}`;
+            }
+
+            const menuGrid = document.getElementById('menu-grid');
+            const filterButtons = document.querySelectorAll('.filter-btn');
+
+            function renderMenu(filter = 'all') {
+                if (!menuGrid) return;
+                const filteredItems = (filter === 'all') ?
+                    MENU_ITEMS :
+                    MENU_ITEMS.filter(item => item.category === filter);
+
+                menuGrid.innerHTML = filteredItems.map(item => `
+                            <div class="bg-charcoal rounded-2xl overflow-hidden shadow-lg card-lift">
+                                <div class="h-48 lazy-bg bg-cover bg-center" data-bg="${item.img}"
+                                     role="img" aria-label="${item.name}"></div>
+                                <div class="p-5">
+                                    <h4 class="font-display text-xl font-bold mb-1">${item.name}</h4>
+                                    <p class="text-bone/70 text-sm mb-3">${item.desc}</p>
+                                    <p class="text-yellow font-bold text-lg mb-4">KES ${item.price}</p>
+                                    <a href="${generateWhatsAppLink(item.name, item.price)}"
+                                       target="_blank" rel="noopener noreferrer"
+                                       class="btn-primary inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm">
+                                        <i class="fab fa-whatsapp" aria-hidden="true"></i> Order This
+                                    </a>
+                                </div>
+                            </div>
+                        `).join('');
+
+                const newLazyBg = menuGrid.querySelectorAll('.lazy-bg');
+                observeLazyBg(newLazyBg);
+            }
+
+            function setActiveFilter(button) {
+                filterButtons.forEach(btn => {
+                    btn.classList.remove('active');
+                    btn.setAttribute('aria-pressed', 'false');
+                });
+                button.classList.add('active');
+                button.setAttribute('aria-pressed', 'true');
+                renderMenu(button.dataset.filter);
+            }
+
+            filterButtons.forEach(btn => {
+                btn.addEventListener('click', () => setActiveFilter(btn));
+            });
+
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (menuToggle && mobileMenu) {
+                menuToggle.addEventListener('click', () => {
+                    const isOpen = !mobileMenu.classList.contains('hidden');
+                    if (isOpen) {
+                        mobileMenu.classList.add('hidden');
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                        menuToggle.setAttribute('aria-label', 'Open menu');
+                    } else {
+                        mobileMenu.classList.remove('hidden');
+                        menuToggle.setAttribute('aria-expanded', 'true');
+                        menuToggle.setAttribute('aria-label', 'Close menu');
+                    }
+                });
+
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                        menuToggle.setAttribute('aria-label', 'Open menu');
+                    });
+                });
+            }
+
+            renderMenu();
+        })();
+    </script>
+</body>
+</html>
