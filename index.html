@@ -1,34 +1,30 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="default">
+<html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-    <title>Redwood Restaurant | Sizzling‑Hot Kenyan Organic Dishes – Order via WhatsApp</title>
+    <title>Redwood Restaurant | Sizzling-Hot Kenyan Organic Dishes – Order via WhatsApp</title>
     <meta name="description"
         content="Nyama choma, legendary wraps & steaming irio — crafted fast, priced for the everyday champion. Order instantly on WhatsApp." />
     <meta name="keywords"
         content="Redwood, nyama choma, pork ribs, Kenyan food, organic, fast casual, Nairobi, WhatsApp order, affordable, healthy" />
     <meta name="author" content="Redwood Restaurant" />
     <link rel="canonical" href="https://redwood.co.ke" />
-    <meta property="og:title" content="Redwood | Sizzling‑Hot Kenyan Organic Dishes" />
+    <meta property="og:title" content="Redwood | Sizzling-Hot Kenyan Organic Dishes" />
     <meta property="og:description"
-        content=" nyama choma, legendary wraps & steaming irio — crafted fast, priced for the everyday champion." />
+        content="Nyama choma, legendary wraps & steaming irio — crafted fast, priced for the everyday champion." />
     <meta property="og:image"
         content="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1200&q=80" />
     <meta property="og:url" content="https://redwood.co.ke" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Redwood | Sizzling-Hot Kenyan Organic Eats" />
+    <meta name="twitter:title" content="Redwood | Sizzling-Hot Kenyan Organic Dishes" />
     <meta name="twitter:description"
-        content=" nyama choma, legendary wraps & steaming irio — crafted fast, priced for the everyday champion." />
+        content="Nyama choma, legendary wraps & steaming irio — crafted fast, priced for the everyday champion." />
     <meta name="twitter:image"
         content="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1200&q=80" />
 
     <script src="https://cdn.tailwindcss.com" defer></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-        media="print" onload="this.media='all'" />
-    <noscript>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-    </noscript>
+    <!-- No external icon fonts – all icons are inline SVGs for maximum speed -->
 
     <script type="application/ld+json">
         {
@@ -67,58 +63,20 @@
     </script>
 
     <style>
-        /* ====== DESIGN TOKENS ====== */
+        /* ====== BRAND TOKENS (Red, Yellow, Amber) ====== */
         :root {
-            /* Core palette (used as fallback) */
+            --primary: #E53935;         /* Fiery red */
+            --secondary: #F5C518;       /* Sun yellow */
+            --accent: #FFB300;          /* Amber – used for highlights & hover */
             --charcoal: #1A1814;
-            --sun-yellow: #F5C518;
-            --steaming-red: #8B3A3A;
-            --bone-white: #F5F0E8;
-            --forest-green: #2E4A3A;
             --dark-card: #22201C;
-
-            /* Theme‑aware tokens (default theme) */
-            --primary: var(--sun-yellow);
-            --primary-glow: rgba(245, 197, 24, 0.35);
-            --secondary: var(--steaming-red);
-            --secondary-glow: rgba(139, 58, 58, 0.4);
-            --bg: var(--charcoal);
-            --card: var(--dark-card);
+            --bone-white: #F5F0E8;
             --text: var(--bone-white);
             --text-muted: rgba(245, 240, 232, 0.7);
             --border: rgba(255, 255, 255, 0.1);
             --overlay-start: rgba(26, 24, 20, 0.4);
             --overlay-end: rgba(26, 24, 20, 0.85);
-        }
-
-        /* Amber theme – rich, golden, reminiscent of warm honey */
-        [data-theme="amber"] {
-            --primary: #E8A828;
-            --primary-glow: rgba(232, 168, 40, 0.35);
-            --secondary: #A14D2C;
-            --secondary-glow: rgba(161, 77, 44, 0.4);
-            --bg: #1F1B13;
-            --card: #2A2318;
-            --text: #F8F0D9;
-            --text-muted: rgba(248, 240, 217, 0.7);
-            --border: rgba(255, 255, 255, 0.08);
-            --overlay-start: rgba(31, 27, 19, 0.4);
-            --overlay-end: rgba(31, 27, 19, 0.88);
-        }
-
-        /* Cozy theme – cream backgrounds, terracotta accents, soft textures */
-        [data-theme="cozy"] {
-            --primary: #C67A3D;
-            --primary-glow: rgba(198, 122, 61, 0.35);
-            --secondary: #8B3A3A;
-            --secondary-glow: rgba(139, 58, 58, 0.4);
-            --bg: #FDF8F0;
-            --card: #FFFFFF;
-            --text: #3E2C1C;
-            --text-muted: rgba(62, 44, 28, 0.7);
-            --border: rgba(62, 44, 28, 0.12);
-            --overlay-start: rgba(253, 248, 240, 0.4);
-            --overlay-end: rgba(253, 248, 240, 0.85);
+            --whatsapp-green: #25D366;
         }
 
         *,
@@ -129,7 +87,7 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg);
+            background-color: var(--charcoal);
             color: var(--text);
             margin: 0;
             line-height: 1.6;
@@ -147,24 +105,24 @@
         .bg-primary      { background-color: var(--primary); }
         .border-primary  { border-color: var(--primary); }
 
-        .text-secondary    { color: var(--secondary); }
-        .bg-secondary      { background-color: var(--secondary); }
-        .border-secondary  { border-color: var(--secondary); }
+        .text-secondary  { color: var(--secondary); }
+        .bg-secondary    { background-color: var(--secondary); }
+        .border-secondary{ border-color: var(--secondary); }
 
-        .text-bone        { color: var(--text); }
-        .bg-bone          { background-color: var(--text); }       /* rarely used but kept */
-        .bg-charcoal      { background-color: var(--bg); }
-        .bg-dark-card     { background-color: var(--card); }
-        .text-muted       { color: var(--text-muted); }
+        .text-accent     { color: var(--accent); }
+        .bg-accent       { background-color: var(--accent); }
+        .border-accent   { border-color: var(--accent); }
 
-        /* Legacy aliases for backwards compatibility – now all mapped to tokens */
-        .text-yellow   { color: var(--primary); }
-        .bg-yellow     { background-color: var(--primary); }
-        .border-yellow { border-color: var(--primary); }
-        .bg-smokey     { background-color: var(--secondary); }  /* fixed: was undefined */
-        .border-smokey { border-color: var(--secondary); }
-        .text-forest   { color: var(--forest-green); }
-        .bg-forest     { background-color: var(--forest-green); }
+        .text-bone       { color: var(--text); }
+        .bg-bone         { background-color: var(--text); }
+        .bg-charcoal     { background-color: var(--charcoal); }
+        .bg-dark-card    { background-color: var(--dark-card); }
+        .text-muted      { color: var(--text-muted); }
+
+        /* Legacy alias – now mapped to secondary (yellow) for ratings, etc. */
+        .text-yellow     { color: var(--secondary); }
+        .bg-yellow       { background-color: var(--secondary); }
+        .border-yellow   { border-color: var(--secondary); }
 
         .skip-link {
             position: absolute;
@@ -172,7 +130,7 @@
             left: 16px;
             z-index: 100;
             background: var(--primary);
-            color: var(--bg);
+            color: #fff;
             padding: 10px 18px;
             border-radius: 0 0 8px 8px;
             font-weight: 600;
@@ -182,20 +140,20 @@
         }
         .skip-link:focus { top: 0; }
 
-        /* Floating WhatsApp button – now uses primary */
+        /* Floating WhatsApp button – green with red icon inside */
         .wa-float {
             position: fixed;
             bottom: 1.5rem;
             right: 1.5rem;
             width: 60px;
             height: 60px;
-            background-color: var(--primary);
-            color: var(--bg);
+            background-color: var(--whatsapp-green);
+            color: var(--primary); /* red icon color */
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 8px 24px var(--primary-glow);
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
             z-index: 50;
             text-decoration: none;
             animation: wa-pulse 2s infinite ease-in-out;
@@ -203,11 +161,11 @@
         }
         .wa-float:hover {
             transform: scale(1.15);
-            box-shadow: 0 12px 28px var(--primary-glow);
+            box-shadow: 0 12px 28px rgba(37, 211, 102, 0.5);
             animation: none;
         }
         .wa-float:focus-visible {
-            outline: 3px solid var(--primary);
+            outline: 3px solid var(--whatsapp-green);
             outline-offset: 4px;
             animation: none;
         }
@@ -222,14 +180,14 @@
 
         .lazy-bg {
             background-image: none !important;
-            background-color: var(--bg);
+            background-color: var(--charcoal);
         }
 
         .filter-btn.active {
             background-color: var(--primary);
-            color: var(--bg);
+            color: #fff;
             font-weight: 700;
-            box-shadow: 0 0 20px var(--primary-glow);
+            box-shadow: 0 0 20px rgba(229,57,53,0.4);
         }
         .filter-btn:focus-visible {
             outline: 2px solid var(--primary);
@@ -243,30 +201,32 @@
         html { scroll-behavior: smooth; }
 
         .btn-outline-yellow {
-            border: 2px solid var(--primary);
-            color: var(--primary);
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
             background: transparent;
             transition: all 0.25s ease;
         }
         .btn-outline-yellow:hover {
-            background-color: rgba(var(--primary-rgb, 245,197,24), 0.12);
+            background-color: rgba(245,197,24,0.12);
             transform: translateY(-1px);
+            border-color: var(--accent);
+            color: var(--accent);
         }
         .btn-outline-yellow:focus-visible {
-            outline: 2px solid var(--primary);
+            outline: 2px solid var(--secondary);
             outline-offset: 3px;
         }
 
         .btn-primary {
             background-color: var(--primary);
-            color: var(--bg);
+            color: #fff;
             font-weight: 600;
             transition: all 0.25s ease;
         }
         .btn-primary:hover {
-            filter: brightness(1.1);
+            filter: brightness(1.15);
             transform: translateY(-1px);
-            box-shadow: 0 6px 20px var(--primary-glow);
+            box-shadow: 0 6px 20px rgba(229,57,53,0.45);
         }
         .btn-primary:focus-visible {
             outline: 3px solid var(--primary);
@@ -275,14 +235,18 @@
 
         .btn-secondary {
             background-color: var(--secondary);
-            color: #fff;
+            color: var(--charcoal);
             font-weight: 600;
             transition: all 0.25s ease;
         }
         .btn-secondary:hover {
-            filter: brightness(1.1);
+            background-color: var(--accent);
             transform: translateY(-1px);
-            box-shadow: 0 6px 20px var(--secondary-glow);
+            box-shadow: 0 6px 20px rgba(255,179,0,0.4);
+        }
+        .btn-secondary:focus-visible {
+            outline: 3px solid var(--secondary);
+            outline-offset: 3px;
         }
 
         .card-lift {
@@ -293,7 +257,7 @@
             box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
         }
 
-        img { max-width: 100%; height: auto; }
+        img { max-width: 100%; height: auto; display: block; }
 
         a:focus-visible,
         button:focus-visible,
@@ -302,27 +266,18 @@
             outline-offset: 2px;
         }
 
-        /* ====== THEME SWITCHER ====== */
-        .theme-switcher {
-            display: flex;
-            gap: 8px;
-            align-items: center;
+        /* special section (primary red background) */
+        .special-section {
+            background-color: var(--primary);
+            color: #fff;
         }
-        .theme-btn {
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            border: 2px solid transparent;
-            cursor: pointer;
-            transition: border-color 0.2s;
-            box-shadow: 0 0 8px rgba(0,0,0,0.2);
-        }
-        .theme-btn.active-theme {
-            border-color: var(--text);
-        }
-        .theme-btn:focus-visible {
-            outline: 2px solid var(--primary);
-            outline-offset: 2px;
+
+        /* Inline SVG icons set to inherit color */
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.125em;
+            fill: currentColor;
         }
     </style>
 </head>
@@ -330,10 +285,10 @@
 
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <header class="sticky top-0 z-40 bg-[var(--bg)]/95 backdrop-blur-sm border-b border-[var(--border)]" role="banner">
+    <header class="sticky top-0 z-40 bg-[var(--charcoal)]/95 backdrop-blur-sm border-b border-[var(--border)]" role="banner">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16 lg:h-20">
-                <a href="#" class="flex items-center space-x-2 focus-visible:outline-yellow" aria-label="Redwood Home">
+                <a href="#" class="flex items-center space-x-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow" aria-label="Redwood Home">
                     <span class="font-display text-2xl lg:text-3xl font-bold tracking-wide text-bone">Redwood Restaurant</span>
                 </a>
                 <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium" aria-label="Main navigation">
@@ -343,39 +298,31 @@
                     <a href="#contact" class="hover:text-primary transition-colors duration-200">Contact</a>
                 </nav>
                 <div class="hidden lg:flex items-center gap-4">
-                    <!-- Theme Switcher -->
-                    <div class="theme-switcher" role="radiogroup" aria-label="Color theme">
-                        <button class="theme-btn active-theme" style="background: #F5C518;" data-theme="default" aria-checked="true" role="radio" aria-label="Default theme"></button>
-                        <button class="theme-btn" style="background: #E8A828;" data-theme="amber" aria-checked="false" role="radio" aria-label="Amber theme"></button>
-                        <button class="theme-btn" style="background: #C67A3D;" data-theme="cozy" aria-checked="false" role="radio" aria-label="Cozy theme"></button>
-                    </div>
                     <a href="https://wa.me/254702555093?text=Hi%20Redwood!%20I%20want%20to%20order."
                         target="_blank" rel="noopener noreferrer"
                         class="btn-primary px-5 py-2.5 rounded-full text-sm inline-flex items-center gap-2">
-                        <i class="fab fa-whatsapp" aria-hidden="true"></i> Order Now
+                        <!-- WhatsApp icon SVG -->
+                        <svg class="icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+                        Order Now
                     </a>
                 </div>
                 <button id="menu-toggle" class="lg:hidden text-bone focus:outline-none p-2" aria-label="Open menu"
                     aria-expanded="false" aria-controls="mobile-menu" type="button">
-                    <i class="fas fa-bars text-2xl" aria-hidden="true"></i>
+                    <svg class="icon text-2xl" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
                 </button>
             </div>
         </div>
-        <div id="mobile-menu" class="lg:hidden hidden bg-[var(--bg)] border-t border-[var(--border)] px-4 pb-4" role="navigation"
+        <div id="mobile-menu" class="lg:hidden hidden bg-[var(--charcoal)] border-t border-[var(--border)] px-4 pb-4" role="navigation"
             aria-label="Mobile navigation">
             <a href="#hero" class="block py-3 text-bone hover:text-primary transition-colors duration-200">Home</a>
             <a href="#signature" class="block py-3 text-bone hover:text-primary transition-colors duration-200">Menu</a>
             <a href="#story" class="block py-3 text-bone hover:text-primary transition-colors duration-200">Our Story</a>
             <a href="#contact" class="block py-3 text-bone hover:text-primary transition-colors duration-200">Contact</a>
-            <div class="theme-switcher py-3" role="radiogroup" aria-label="Color theme">
-                <button class="theme-btn active-theme" style="background: #F5C518;" data-theme="default" aria-checked="true" role="radio" aria-label="Default theme"></button>
-                <button class="theme-btn" style="background: #E8A828;" data-theme="amber" aria-checked="false" role="radio" aria-label="Amber theme"></button>
-                <button class="theme-btn" style="background: #C67A3D;" data-theme="cozy" aria-checked="false" role="radio" aria-label="Cozy theme"></button>
-            </div>
             <a href="https://wa.me/254702555093?text=Hi%20Redwood!%20I%20want%20to%20order." target="_blank"
                 rel="noopener noreferrer"
                 class="mt-3 btn-primary py-3 rounded-full text-center flex items-center justify-center gap-2">
-                <i class="fab fa-whatsapp" aria-hidden="true"></i> Order via WhatsApp
+                <svg class="icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+                Order via WhatsApp
             </a>
         </div>
     </header>
@@ -384,9 +331,12 @@
 
         <section id="hero" class="relative h-screen flex items-center justify-center overflow-hidden" aria-labelledby="hero-heading">
             <div class="absolute inset-0 z-0">
-                <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1350&q=80"
+                <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&q=80"
+                    srcset="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&q=80 800w,
+                            https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1200&q=80 1200w"
+                    sizes="(max-width: 768px) 100vw, 1200px"
                     alt="Sizzling Kenyan grill with open flames and aromatic smoke"
-                    class="w-full h-full object-cover opacity-40" loading="eager" fetchpriority="high" />
+                    class="w-full h-full object-cover opacity-40" loading="eager" fetchpriority="high" width="1200" height="800" />
                 <div class="hero-overlay absolute inset-0"></div>
             </div>
             <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
@@ -394,13 +344,14 @@
                     Sizzling‑Hot. Kenyan‑grown.<br />Ready for you.
                 </h1>
                 <p class="text-lg sm:text-xl text-muted max-w-2xl mx-auto mb-10">
-                    Nyama choma, legendary wraps & Steaming irio — crafted fast, priced for the everyday champion.
+                     Nyama choma, legendary wraps & steaming irio — crafted fast, priced for the everyday champion.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
                     <a href="https://wa.me/254702555093?text=Hi%20Redwood!%20I%20want%20to%20order%20some%20fire."
                         target="_blank" rel="noopener noreferrer"
                         class="btn-primary px-8 py-4 rounded-full text-lg inline-flex items-center justify-center gap-2">
-                        <i class="fab fa-whatsapp" aria-hidden="true"></i> Order via WhatsApp
+                        <svg class="icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+                        Order via WhatsApp
                     </a>
                     <a href="#signature"
                         class="btn-outline-yellow px-8 py-4 rounded-full text-lg inline-flex items-center justify-center">
@@ -411,7 +362,7 @@
             </div>
         </section>
 
-        <section id="signature" class="py-20 bg-[var(--bg)]" aria-labelledby="signature-heading">
+        <section id="signature" class="py-20 bg-charcoal" aria-labelledby="signature-heading">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 id="signature-heading" class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-16 text-bone">
                     The craving starts here
@@ -419,8 +370,8 @@
                 <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
                     <div class="bg-dark-card rounded-2xl overflow-hidden shadow-2xl card-lift">
                         <img src="https://i.ibb.co/xSBqp0Dg/1784548006009.png"
-                            alt="Glazed Pork Ribs — 6-hour smoked, honey-glazed, served on steaming irio mash"
-                            class="w-full h-64 sm:h-80 object-cover" loading="lazy" />
+                            alt="Glazed Pork Ribs — 6-hour smoked, honey-glazed, served with steaming irio mash"
+                            class="w-full h-64 sm:h-80 object-cover" loading="lazy" width="640" height="480" />
                         <div class="p-6 sm:p-8">
                             <h3 class="font-display text-2xl sm:text-3xl font-bold mb-2">Glazed Pork Ribs</h3>
                             <p class="text-muted mb-4">6‑hour smoked, glazed with local honey & secret spices, served on steaming irio mash.</p>
@@ -428,22 +379,24 @@
                             <a href="https://wa.me/254702555093?text=I'd%20like%20the%20Glazed%20Pork%20Ribs%20platter,%20please."
                                 target="_blank" rel="noopener noreferrer"
                                 class="btn-primary inline-flex items-center gap-2 px-6 py-3 rounded-full">
-                                <i class="fab fa-whatsapp" aria-hidden="true"></i> I Want This
+                                <svg class="icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M17.472 14.382..."/></svg>
+                                I Want This
                             </a>
                         </div>
                     </div>
                     <div class="bg-dark-card rounded-2xl overflow-hidden shadow-2xl card-lift">
                         <img src="https://i.ibb.co/RTNdGT1q/1784543431198.png"
                             alt="The Hustler's Wrap — flame-grilled nyama choma with pili pili and fresh kachumbari in a chapati"
-                            class="w-full h-64 sm:h-80 object-cover" loading="lazy" />
+                            class="w-full h-64 sm:h-80 object-cover" loading="lazy" width="640" height="480" />
                         <div class="p-6 sm:p-8">
                             <h3 class="font-display text-2xl sm:text-3xl font-bold mb-2">The Hustler's Wrap</h3>
-                            <p class="text-muted mb-4">Flame‑grilled nyama choma, house‑made pili pili fire, fresh kachumbari, rolled in a soft  chapati.</p>
+                            <p class="text-muted mb-4">Flame‑grilled nyama choma, house‑made pili pili fire, fresh kachumbari, rolled in a soft chapati.</p>
                             <p class="text-primary font-bold text-xl mb-6">From KES 150</p>
                             <a href="https://wa.me/254702555093?text=One%20Hustler's%20Wrap%20for%20me!%20Extra%20pili%20pili%20please."
                                 target="_blank" rel="noopener noreferrer"
                                 class="btn-primary inline-flex items-center gap-2 px-6 py-3 rounded-full">
-                                <i class="fab fa-whatsapp" aria-hidden="true"></i> Wrap Me Up
+                                <svg class="icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M17.472 14.382..."/></svg>
+                                Wrap Me Up
                             </a>
                         </div>
                     </div>
@@ -457,30 +410,30 @@
                 <div class="grid md:grid-cols-3 gap-10 text-center">
                     <div class="flex flex-col items-center">
                         <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-5">
-                            <i class="fas fa-leaf text-primary text-2xl" aria-hidden="true"></i>
+                            <svg class="icon text-primary text-2xl" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path fill="currentColor" d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75"/></svg>
                         </div>
                         <h3 class="font-display text-xl font-bold mb-2">100% Local Organic Produce</h3>
-                        <p class="text-muted max-w-xs mx-auto">Sourced from Kenyan farms within 50km. No shortcuts, just clean fuel.</p>
+                        <p class="text-muted max-w-xs mx-auto">Sourced from local farmers. No shortcuts, just clean, fresh and Power-packed Dishes.</p>
                     </div>
                     <div class="flex flex-col items-center">
                         <div class="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center mb-5">
-                            <i class="fas fa-fire text-secondary text-2xl" aria-hidden="true"></i>
+                            <svg class="icon text-secondary text-2xl" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path fill="currentColor" d="M17.66 11.2C17.43 10.9 17.15 10.64 16.89 10.38C16.22 9.78 15.46 9.35 14.82 8.72C13.33 7.26 13 4.85 13.95 3C13 3.23 12.17 3.75 11.46 4.32C8.87 6.4 7.85 10.07 9.07 13.22C9.11 13.32 9.15 13.42 9.15 13.55C9.15 13.77 9 13.97 8.8 14.05C8.57 14.15 8.33 14.09 8.14 13.93C7.08 13.15 5.93 12.36 4.85 11.57C5.5 13.3 6.66 14.73 8.09 15.82C9.05 16.56 10.11 17.2 11.28 17.58C11.67 17.72 12.08 17.82 12.5 17.88C13.31 18 13.89 17.63 14.05 16.85C14.16 16.33 13.89 15.77 13.38 15.55C13.03 15.4 12.63 15.42 12.27 15.3C11.78 15.13 11.33 14.88 10.86 14.68C10.66 14.59 10.44 14.54 10.22 14.54C10.04 14.54 9.9 14.64 9.85 14.82C9.79 15.03 9.88 15.24 10.05 15.36C10.47 15.65 10.95 15.88 11.38 16.17C12.06 16.62 12.23 17.42 11.9 18.14C11.52 18.96 10.73 19.5 9.83 19.57C8.44 19.68 7.13 19.11 6.03 18.33C5.7 18.09 5.41 17.82 5.16 17.53C4.24 16.43 3.67 15.12 3.48 13.72C3.3 12.39 3.52 11.13 4.1 9.97C5.03 8.13 6.53 6.78 8.38 5.95C10.46 5 12.63 4.93 14.79 5.67C16.16 6.13 17.33 6.91 18.25 8C19.61 9.61 20.29 11.5 20.06 13.62C19.87 15.41 19.06 16.97 17.83 18.22C17.28 18.78 16.64 19.24 15.93 19.59C15.19 19.95 14.41 20.14 13.62 20.14C13.62 20.14 13.62 20.14 13.62 20.14C11.33 20.14 9.23 19.16 7.66 17.57C7.37 17.28 7.13 16.97 6.92 16.65C6.54 16.09 6.27 15.48 6.13 14.84C6 14.25 6 13.65 6.09 13.08C6.18 12.51 6.39 11.98 6.68 11.5C7.28 10.5 8.12 9.76 9.13 9.3C9.55 9.12 10 9.02 10.46 9C10.75 8.99 10.95 8.77 10.97 8.5C10.99 8.23 10.81 8 10.53 7.98C10.1 7.95 9.67 8.01 9.27 8.14C8.43 8.42 7.67 8.89 7.04 9.5C6.47 10.05 6 10.71 5.68 11.44C5.26 12.4 5.07 13.41 5.13 14.47C5.19 15.56 5.51 16.6 6.07 17.5C7.1 19.14 8.65 20.22 10.56 20.6C11.5 20.8 12.44 20.81 13.39 20.65C14.54 20.44 15.59 19.96 16.48 19.24C18.09 17.96 19.11 16.28 19.5 14.37C19.89 12.46 19.5 10.63 18.44 9.12Z"/></svg>
                         </div>
                         <h3 class="font-display text-xl font-bold mb-2">Fast Casual, Always Fresh</h3>
-                        <p class="text-muted max-w-xs mx-auto">Grilled to order, packed in 7 minutes. Dine in or delivered to your desk.</p>
+                        <p class="text-muted max-w-xs mx-auto">Grilled to your taste. Dine in or get it delivered to your desk.</p>
                     </div>
                     <div class="flex flex-col items-center">
                         <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-5">
-                            <i class="fas fa-hand-holding-heart text-primary text-2xl" aria-hidden="true"></i>
+                            <svg class="icon text-primary text-2xl" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path fill="currentColor" d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
                         </div>
                         <h3 class="font-display text-xl font-bold mb-2">Prices That Respect Your Hustle</h3>
-                        <p class="text-muted max-w-xs mx-auto">Premium taste, street‑smart prices. From 350 KES.</p>
+                        <p class="text-muted max-w-xs mx-auto">Premium taste, street‑smart prices. From 150 KES.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="py-20 bg-[var(--bg)]" aria-labelledby="how-it-works-heading">
+        <section class="py-20 bg-charcoal" aria-labelledby="how-it-works-heading">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 id="how-it-works-heading" class="font-display text-3xl sm:text-4xl font-bold text-center mb-16">How It Works</h2>
                 <div class="grid md:grid-cols-3 gap-10 text-center">
@@ -522,22 +475,22 @@
             </div>
         </section>
 
-        <section class="py-20 bg-[var(--bg)]" aria-labelledby="testimonials-heading">
+        <section class="py-20 bg-charcoal" aria-labelledby="testimonials-heading">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 id="testimonials-heading" class="font-display text-3xl sm:text-4xl font-bold text-center mb-16">Belly & Hustle Approved</h2>
                 <div class="grid md:grid-cols-3 gap-8">
                     <div class="bg-dark-card p-6 rounded-2xl shadow-lg card-lift">
-                        <div class="text-primary text-2xl mb-4" aria-label="5 out of 5 stars">★★★★★</div>
+                        <div class="text-yellow text-2xl mb-4" aria-label="5 out of 5 stars">★★★★★</div>
                         <blockquote class="text-muted italic mb-4">"No time for lunch meetings. Redwood wraps are my boardroom secret weapon. Chapati wrap, pili pili, done."</blockquote>
                         <p class="font-semibold">— Brian, Advocate</p>
                     </div>
                     <div class="bg-dark-card p-6 rounded-2xl shadow-lg card-lift">
-                        <div class="text-primary text-2xl mb-4" aria-label="5 out of 5 stars">★★★★★</div>
-                        <blockquote class="text-muted italic mb-4">"Kwanza ile pork ribs… nikiorder delivery, inafika bado inasmoke. Affordable but feels like a treat."</blockquote>
+                        <div class="text-yellow text-2xl mb-4" aria-label="5 out of 5 stars">★★★★★</div>
+                        <blockquote class="text-muted italic mb-4">"Kwanza ile pork ribs… nikiorder delivery, ikafika on time. Affordable but feels like a treat."</blockquote>
                         <p class="font-semibold">— Muthoni, Salon Owner</p>
                     </div>
                     <div class="bg-dark-card p-6 rounded-2xl shadow-lg card-lift">
-                        <div class="text-primary text-2xl mb-4" aria-label="5 out of 5 stars">★★★★★</div>
+                        <div class="text-yellow text-2xl mb-4" aria-label="5 out of 5 stars">★★★★★</div>
                         <blockquote class="text-muted italic mb-4">"Finally, nyama choma that doesn't cost a fortune. My whole crew orders on Fridays."</blockquote>
                         <p class="font-semibold">— Otieno, Site Foreman</p>
                     </div>
@@ -545,29 +498,30 @@
             </div>
         </section>
 
-        <section class="py-16 bg-secondary" aria-labelledby="special-heading">
+        <section class="py-16 special-section" aria-labelledby="special-heading">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
                     <p id="special-heading" class="text-2xl sm:text-3xl font-display font-bold text-white">🔥 Today's Fire Special</p>
                     <img src="https://i.ibb.co/fYJVkFV7/1784544829697.png"
                         alt="Today's special — Nyama choma platter for two with free ugali"
-                        class="w-32 h-32 object-cover rounded-xl shadow-lg" loading="lazy" />
+                        class="w-32 h-32 object-cover rounded-xl shadow-lg" loading="lazy" width="128" height="128" />
                     <p class="text-lg text-white/90">Nyama choma platter for two + free Ugali</p>
                 </div>
                 <a href="https://wa.me/254702555093?text=SPECIAL" target="_blank" rel="noopener noreferrer"
-                    class="btn-primary inline-flex items-center gap-2 px-8 py-4 rounded-full text-lg">
-                    <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp 'SPECIAL'
+                    class="btn-secondary inline-flex items-center gap-2 px-8 py-4 rounded-full text-lg">
+                    <svg class="icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M17.472 14.382..."/></svg>
+                    WhatsApp 'SPECIAL'
                 </a>
             </div>
         </section>
 
-        <section id="story" class="py-20 bg-[var(--bg)]" aria-labelledby="story-heading">
+        <section id="story" class="py-20 bg-charcoal" aria-labelledby="story-heading">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid lg:grid-cols-2 gap-12 items-center">
                     <div>
                         <h2 id="story-heading" class="font-display text-3xl sm:text-4xl font-bold mb-6">The Fire That Started It All</h2>
-                        <p class="text-muted leading-relaxed mb-4">Growing up, nyama choma wasn't just food — it was celebration, community, and the smell of possibility. Redwood was born to make that fire accessible every day: fast, organic, and priced for the doers.</p>
-                        <p class="text-muted leading-relaxed mb-6">We partner with local organic farmers within 50km. Our pork, our vegetables, our spices — all traceable, all clean. No shortcuts. Just the primal taste of Kenya, elevated.</p>
+                        <p class="text-muted leading-relaxed mb-4">Growing up, nyama choma wasn't just food — it was celebration, community, and the smell of possibility. Redwood was born to make that fire accessible every day: fast, organic and tasty.</p>
+                        <p class="text-muted leading-relaxed mb-6">We partner with local organic farmers. Our pork, our vegetables, our spices — all traceable, all clean. No shortcuts.</p>
                         <div class="flex flex-wrap gap-4">
                             <span class="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">🌱 100% Organic</span>
                             <span class="bg-secondary/10 text-secondary px-4 py-2 rounded-full text-sm font-medium">🇰🇪 Locally Sourced</span>
@@ -576,8 +530,8 @@
                     </div>
                     <div class="rounded-2xl overflow-hidden shadow-2xl">
                         <img src="https://i.ibb.co/MD1bbqbT/1784543596004.png"
-                            alt="Redwood's open-flame grill with  meats and fresh ingredients"
-                            class="w-full h-auto object-cover" loading="lazy" />
+                            alt="Redwood's open-flame grilled meat with fresh ingredients"
+                            class="w-full h-auto object-cover" loading="lazy" width="600" height="400" />
                     </div>
                 </div>
             </div>
@@ -604,13 +558,13 @@
                     </div>
                     <div class="flex flex-wrap gap-4 pt-4">
                         <a href="https://wa.me/254702555093" target="_blank" rel="noopener noreferrer"
-                            class="text-primary hover:text-primary/80 transition-colors duration-200 inline-flex items-center gap-2">
-                            <i class="fab fa-whatsapp text-2xl" aria-hidden="true"></i>
+                            class="text-primary hover:text-accent transition-colors duration-200 inline-flex items-center gap-2">
+                            <svg class="icon text-2xl" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M17.472 14.382..."/></svg>
                             <span>+254 702 555 093</span>
                         </a>
                         <a href="mailto:harrisoncheruiyot04@gmail.com"
-                            class="text-primary hover:text-primary/80 transition-colors duration-200 inline-flex items-center gap-2">
-                            <i class="far fa-envelope text-2xl" aria-hidden="true"></i>
+                            class="text-primary hover:text-accent transition-colors duration-200 inline-flex items-center gap-2">
+                            <svg class="icon text-2xl" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline fill="none" stroke="currentColor" stroke-width="2" points="22,6 12,13 2,6"/></svg>
                             <span>harrisoncheruiyot04@gmail.com</span>
                         </a>
                     </div>
@@ -619,7 +573,7 @@
         </section>
     </main>
 
-    <footer class="bg-[var(--bg)] border-t border-[var(--border)] py-12" role="contentinfo">
+    <footer class="bg-charcoal border-t border-[var(--border)] py-12" role="contentinfo">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-3 gap-8 text-center md:text-left">
                 <div>
@@ -638,24 +592,21 @@
                 <div>
                     <h4 class="font-semibold mb-3">Join the Tribe</h4>
                     <p class="text-sm text-muted mb-3">Get weekly specials & new dish alerts.</p>
-                    <form class="flex flex-col sm:flex-row gap-2"
-                        action="mailto:harrisoncheruiyot04@gmail.com" method="POST" enctype="text/plain">
-                        <label for="email-input" class="sr-only">Your email address</label>
-                        <input id="email-input" name="email" type="email" placeholder="Your email" required
-                            class="px-4 py-2 rounded-full bg-dark-card border border-[var(--border)] text-bone placeholder:text-muted/40 focus:outline-none focus:border-primary transition-colors duration-200" />
-                        <button type="submit" class="btn-primary px-6 py-2 rounded-full text-sm">Sign Up</button>
-                    </form>
+                    <a href="mailto:harrisoncheruiyot04@gmail.com?subject=Sign%20me%20up%20for%20Redwood%20updates"
+                        class="btn-primary inline-block px-6 py-2 rounded-full text-sm">
+                        Sign Up via Email
+                    </a>
                     <div class="flex justify-center md:justify-start gap-4 mt-5 text-xl text-muted/60">
                         <a href="https://www.instagram.com/redwoodke" target="_blank" rel="noopener noreferrer"
                             class="hover:text-primary transition-colors duration-200" aria-label="Follow Redwood on Instagram">
-                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                            <svg class="icon" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><rect width="24" height="24" fill="none"/><path fill="currentColor" d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg>
                         </a>
                         <a href="https://www.tiktok.com/@redwoodke" target="_blank" rel="noopener noreferrer"
                             class="hover:text-primary transition-colors duration-200" aria-label="Follow Redwood on TikTok">
-                            <i class="fab fa-tiktok" aria-hidden="true"></i>
+                            <svg class="icon" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path fill="currentColor" d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
                         </a>
                         <a href="#" class="hover:text-primary transition-colors duration-200" aria-label="Find Redwood on Google">
-                            <i class="fab fa-google" aria-hidden="true"></i>
+                            <svg class="icon" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path fill="currentColor" d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/></svg>
                         </a>
                     </div>
                 </div>
@@ -666,9 +617,12 @@
         </div>
     </footer>
 
+    <!-- Green pulsing floating button with RED WhatsApp icon inside -->
     <a href="https://wa.me/254702555093?text=Hi%20Redwood!%20I'd%20like%20to%20place%20an%20order." target="_blank"
-        rel="noopener noreferrer" class="wa-float" aria-label="Order now via WhatsApp">
-        <i class="fab fa-whatsapp text-2xl" aria-hidden="true"></i>
+        rel="noopener noreferrer" class="wa-float" aria-label="Book now via WhatsApp">
+        <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
+            <path fill="#E53935" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+        </svg>
     </a>
 
     <script>
@@ -698,10 +652,10 @@
                 { name: 'Glazed Pork Ribs', desc: 'Smoked 6hrs, honey glaze, steaming irio mash.', price: '450', category: 'pork', img: 'https://i.ibb.co/xSBqp0Dg/1784548006009.png' },
                 { name: 'Nyama Choma Platter', desc: 'Fire‑grilled beef, kachumbari, ugali or irio.', price: '500', category: 'nyamachoma', img: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=500&q=80' },
                 { name: 'The Hustler\'s Wrap', desc: 'Nyama choma, pili pili, kachumbari in a chapati.', price: '150', category: 'wraps', img: 'https://i.ibb.co/RTNdGT1q/1784543431198.png' },
-                { name: 'Chapati (5 pcs)', desc: 'Soft, pan‑grilled chapati.', price: '150', category: 'wraps', img: 'https://i.ibb.co/v6rPTMxG/1784551237074.png' },
+                { name: 'Chapati (5 pcs)', desc: 'Soft, organic, pan‑grilled chapati.', price: '150', category: 'wraps', img: 'https://i.ibb.co/v6rPTMxG/1784551237074.png' },
                 { name: 'Steaming Irio', desc: 'Mashed peas, potatoes with corn.', price: '200', category: 'sides', img: 'https://i.ibb.co/hF830wy1/1784542873230.png' },
-                { name: 'Pork Sausages (5 pcs)', desc: 'coarse‑ground, grilled over open flame.', price: '250', category: 'pork', img: 'https://i.ibb.co/n8QfzCV6/1784543297457.png' },
-                { name: 'Spicy Chicken Wings', desc: 'Marinated in pili pili, chargrilled.', price: '420', category: 'nyamachoma', img: 'https://i.ibb.co/B5g7NP43/1784551556649.png' },
+                { name: 'Pork Sausages (5 pcs)', desc: 'Organic, coarse‑ground, grilled over open flame.', price: '250', category: 'pork', img: 'https://i.ibb.co/n8QfzCV6/1784543297457.png' },
+                { name: 'Spicy Chicken Wings', desc: 'Marinated, chargrilled.', price: '420', category: 'nyamachoma', img: 'https://i.ibb.co/B5g7NP43/1784551556649.png' },
                 { name: 'Kachumbari Salad', desc: 'Fresh tomato, onion, cilantro, lime.', price: '150', category: 'sides', img: 'https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=500&q=80' }
             ];
 
@@ -719,7 +673,7 @@
                 if (!menuGrid) return;
                 const filteredItems = (filter === 'all') ? MENU_ITEMS : MENU_ITEMS.filter(item => item.category === filter);
                 menuGrid.innerHTML = filteredItems.map(item => `
-                    <div class="bg-[var(--bg)] rounded-2xl overflow-hidden shadow-lg card-lift">
+                    <div class="bg-[var(--charcoal)] rounded-2xl overflow-hidden shadow-lg card-lift">
                         <div class="h-48 lazy-bg bg-cover bg-center" data-bg="${item.img}" role="img" aria-label="${item.name}"></div>
                         <div class="p-5">
                             <h4 class="font-display text-xl font-bold mb-1">${item.name}</h4>
@@ -727,7 +681,8 @@
                             <p class="text-primary font-bold text-lg mb-4">KES ${item.price}</p>
                             <a href="${generateWhatsAppLink(item.name, item.price)}" target="_blank" rel="noopener noreferrer"
                                class="btn-primary inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm">
-                                <i class="fab fa-whatsapp" aria-hidden="true"></i> Order This
+                                <svg class="icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M17.472 14.382..."/></svg>
+                                Order This
                             </a>
                         </div>
                     </div>
@@ -771,31 +726,6 @@
                     });
                 });
             }
-
-            // ====== THEME SWITCHER ======
-            const themeButtons = document.querySelectorAll('.theme-btn');
-            const html = document.documentElement;
-
-            function setTheme(theme) {
-                html.setAttribute('data-theme', theme);
-                localStorage.setItem('redwood-theme', theme);
-                // Update active state on all theme buttons
-                themeButtons.forEach(btn => {
-                    const isActive = btn.dataset.theme === theme;
-                    btn.classList.toggle('active-theme', isActive);
-                    btn.setAttribute('aria-checked', isActive);
-                });
-            }
-
-            // Load saved theme
-            const savedTheme = localStorage.getItem('redwood-theme') || 'default';
-            setTheme(savedTheme);
-
-            themeButtons.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    setTheme(btn.dataset.theme);
-                });
-            });
 
             // Initial menu render
             renderMenu();
