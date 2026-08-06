@@ -1,0 +1,294 @@
+/* styles.css – Redwood Restaurant – Premium, production-ready */
+
+/* ====== GOOGLE FONTS – Elegant & premium ====== */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;600;700&display=swap');
+
+/* ====== BRAND TOKENS ====== */
+:root {
+  --primary: #E53935;           /* fiery red – brand accent */
+  --secondary: #F5C518;         /* sun yellow – ratings & specials */
+  --accent: #FFB300;            /* amber – hover & highlights */
+  --charcoal: #1A1814;          /* deep background */
+  --dark-card: #22201C;         /* card background */
+  --bone-white: #F5F0E8;        /* main text */
+  --text-muted: rgba(245, 240, 232, 0.7);
+  --border: rgba(255, 255, 255, 0.1);
+  --overlay-start: rgba(26, 24, 20, 0.4);
+  --overlay-end: rgba(26, 24, 20, 0.85);
+  --whatsapp-green: #25D366;
+  --font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* ====== RESET & BASE ====== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--charcoal);
+  color: var(--bone-white);
+  margin: 0;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, .font-display {
+  font-family: var(--font-heading);
+  letter-spacing: -0.01em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ====== UTILITY CLASSES ====== */
+.text-primary    { color: var(--primary); }
+.bg-primary      { background-color: var(--primary); }
+.border-primary  { border-color: var(--primary); }
+
+.text-secondary  { color: var(--secondary); }
+.bg-secondary    { background-color: var(--secondary); }
+.border-secondary{ border-color: var(--secondary); }
+
+.text-accent     { color: var(--accent); }
+.bg-accent       { background-color: var(--accent); }
+.border-accent   { border-color: var(--accent); }
+
+.text-bone       { color: var(--bone-white); }
+.bg-bone         { background-color: var(--bone-white); }
+.bg-charcoal     { background-color: var(--charcoal); }
+.bg-dark-card    { background-color: var(--dark-card); }
+.text-muted      { color: var(--text-muted); }
+
+.text-yellow     { color: var(--secondary); }
+.bg-yellow       { background-color: var(--secondary); }
+.border-yellow   { border-color: var(--secondary); }
+
+/* ====== ACCESSIBILITY ====== */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 16px;
+  z-index: 100;
+  background: var(--primary);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 0 0 8px 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: top 0.25s ease;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* ====== BUTTONS ====== */
+.btn-primary {
+  background-color: var(--primary);
+  color: #fff;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  border: none;
+}
+.btn-primary:hover {
+  filter: brightness(1.15);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(229, 57, 53, 0.45);
+}
+.btn-primary:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 3px;
+}
+
+.btn-secondary {
+  background-color: var(--secondary);
+  color: var(--charcoal);
+  font-weight: 600;
+  transition: all 0.25s ease;
+  border: none;
+}
+.btn-secondary:hover {
+  background-color: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(255, 179, 0, 0.4);
+}
+.btn-secondary:focus-visible {
+  outline: 3px solid var(--secondary);
+  outline-offset: 3px;
+}
+
+.btn-outline-yellow {
+  border: 2px solid var(--secondary);
+  color: var(--secondary);
+  background: transparent;
+  transition: all 0.25s ease;
+}
+.btn-outline-yellow:hover {
+  background-color: rgba(245, 197, 24, 0.12);
+  transform: translateY(-1px);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.btn-outline-yellow:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 3px;
+}
+
+/* ====== FILTER BUTTONS (menu categories) ====== */
+.filter-btn {
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  background: transparent;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.filter-btn.active {
+  background-color: var(--primary);
+  color: #fff;
+  font-weight: 700;
+  box-shadow: 0 0 20px rgba(229, 57, 53, 0.4);
+}
+.filter-btn:hover:not(.active) {
+  background-color: rgba(229, 57, 53, 0.08);
+}
+
+/* ====== CARD LIFT EFFECT ====== */
+.card-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* ====== HERO OVERLAY ====== */
+.hero-overlay {
+  background: linear-gradient(to bottom, var(--overlay-start) 0%, var(--overlay-end) 100%);
+}
+
+/* ====== SPECIAL SECTION ====== */
+.special-section {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+/* ====== FLOATING WHATSAPP BUTTON ====== */
+.wa-float {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 60px;
+  height: 60px;
+  background-color: var(--whatsapp-green);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+  z-index: 50;
+  text-decoration: none;
+  animation: wa-pulse 2s infinite ease-in-out;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  color: #fff;
+}
+.wa-float:hover {
+  transform: scale(1.15);
+  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.5);
+  animation: none;
+}
+.wa-float:focus-visible {
+  outline: 3px solid var(--whatsapp-green);
+  outline-offset: 4px;
+  animation: none;
+}
+@keyframes wa-pulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+@media (max-width: 640px) {
+  .wa-float {
+    bottom: 1rem;
+    right: 1rem;
+    width: 55px;
+    height: 55px;
+  }
+}
+
+/* ====== SVG ICONS ====== */
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.125em;
+  fill: currentColor;
+}
+
+/* ====== MOBILE MENU ANIMATION ====== */
+#mobile-menu {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease;
+  padding: 0 1rem;
+}
+#mobile-menu.open {
+  max-height: 400px;       /* Adjust if your menu content is taller */
+  opacity: 1;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+/* ====== MENU CARD FILTERING ====== */
+.menu-card {
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.menu-card.hidden {
+  display: none;
+}
+
+/* ====== SCROLL REVEAL (intersection observer) ====== */
+.reveal-hidden {
+  opacity: 0 !important;
+  transform: translateY(24px) !important;
+}
+
+/* ====== MISCELLANEOUS ====== */
+.lazy-bg {
+  background-image: none !important;
+  background-color: var(--charcoal);
+}
+
+button {
+  font-family: inherit;
+}
+
+/* ====== RESPONSIVE TWEAKS ====== */
+@media (max-width: 768px) {
+  .wa-float {
+    bottom: 1rem;
+    right: 1rem;
+  }
+}
