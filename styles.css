@@ -24,8 +24,8 @@
   --muted:     rgba(245, 240, 232, 0.78);
   --faint:     rgba(245, 240, 232, 0.55);
   --border:    rgba(255, 255, 255, 0.1);
-  --overlay-start: rgba(26, 24, 20, 0.4);
-  --overlay-end:   rgba(26, 24, 20, 0.85);
+  --overlay-start: rgba(26, 24, 20, 0.3);
+  --overlay-end:   rgba(26, 24, 20, 0.78);
 
   --whatsapp-green: #1DA851;
   --whatsapp-green-hover: #178C42;
@@ -35,6 +35,9 @@
 
   --header-h-mobile: 4rem;
   --header-h-desktop: 5rem;
+
+  --tap-min: 44px;
+  --mobile-bar-h: 68px;
 }
 
 /* =============================================================
@@ -46,6 +49,9 @@ html {
   scroll-behavior: smooth;
   /* Native anchor clicks land below the sticky header */
   scroll-padding-top: 5rem;
+  /* Defensive: prevents accidental horizontal scroll (fixed-position safe
+     because we apply it on the root, not body) */
+  overflow-x: hidden;
 }
 
 body {
@@ -63,6 +69,8 @@ h1, h2, h3, h4, .font-display {
   letter-spacing: -0.01em;
   margin: 0;
 }
+
+h1, h2 { text-wrap: balance; }
 
 a { color: inherit; text-decoration: none; }
 
@@ -125,11 +133,11 @@ main[id] { scroll-margin-top: 5rem; }
 .z-0 { z-index: 0; }
 .z-10 { z-index: 10; }
 .z-40 { z-index: 40; }
+.z-45 { z-index: 45; }
 .z-50 { z-index: 50; }
 
 .overflow-hidden { overflow: hidden; }
 
-/* mx-auto was previously used in HTML but never defined. */
 .mx-auto { margin-left: auto; margin-right: auto; }
 
 /* =============================================================
@@ -238,6 +246,14 @@ main[id] { scroll-margin-top: 5rem; }
   border-width: 0;
 }
 
+/* Menu / signature card titles use Inter for scannability.
+   Playfair is reserved for H1 / H2. */
+.card-title {
+  font-family: var(--font-body);
+  letter-spacing: -0.005em;
+  font-weight: 700;
+}
+
 /* =============================================================
    7. COLORS
    ============================================================= */
@@ -276,7 +292,6 @@ main[id] { scroll-margin-top: 5rem; }
 .shadow-2xl { box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); }
 
 .object-cover { object-fit: cover; }
-.opacity-40 { opacity: 0.4; }
 
 /* =============================================================
    9. INTERACTIVE STATES & FOCUS
@@ -308,6 +323,7 @@ main[id] { scroll-margin-top: 5rem; }
 
 /* =============================================================
    11. COMPONENT — Buttons
+   All interactive controls enforce a 44px minimum tap height
    ============================================================= */
 .btn-primary {
   background-color: var(--brand-bg);
@@ -316,6 +332,7 @@ main[id] { scroll-margin-top: 5rem; }
   transition: background-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
   border: none;
   cursor: pointer;
+  min-height: var(--tap-min);
 }
 .btn-primary:focus-visible {
   outline: 3px solid var(--brand-accent);
@@ -329,6 +346,7 @@ main[id] { scroll-margin-top: 5rem; }
   transition: background-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
   border: none;
   cursor: pointer;
+  min-height: var(--tap-min);
 }
 .btn-secondary:focus-visible {
   outline: 3px solid var(--brand-bg);
@@ -341,13 +359,14 @@ main[id] { scroll-margin-top: 5rem; }
   background: transparent;
   transition: all 0.25s ease;
   cursor: pointer;
+  min-height: var(--tap-min);
 }
 .btn-outline-yellow:focus-visible {
   outline: 3px solid var(--brand-accent);
   outline-offset: 3px;
 }
 
-/* Hover effects gated to real pointer devices to avoid sticky hover on touch */
+/* Hover effects gated to real pointer devices */
 @media (hover: hover) and (pointer: fine) {
   .btn-primary:hover {
     background-color: var(--brand-bg-hover);
@@ -368,7 +387,7 @@ main[id] { scroll-margin-top: 5rem; }
 }
 
 /* =============================================================
-   12. COMPONENT — Filter buttons
+   12. COMPONENT — Filter buttons (min 44px tap target)
    ============================================================= */
 .filter-btn {
   border: 1px solid var(--brand);
@@ -378,6 +397,10 @@ main[id] { scroll-margin-top: 5rem; }
   transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
   cursor: pointer;
   font-size: 0.875rem;
+  min-height: var(--tap-min);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 .filter-btn.active {
   background-color: var(--brand-bg);
@@ -451,27 +474,28 @@ main[id] { scroll-margin-top: 5rem; }
 }
 
 /* =============================================================
-   17. COMPONENT — Spice selector
+   17. COMPONENT — Spice selector (min 44px tap target)
    ============================================================= */
 .spice-field { display: block; margin-top: 0.5rem; }
 
 .spice-label {
   display: block;
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--muted);
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 
 .spice-select {
   width: 100%;
+  min-height: var(--tap-min);
   background-color: rgba(255, 255, 255, 0.04);
   color: var(--bone);
   border: 1px solid var(--border);
   border-radius: 999px;
-  padding: 6px 12px;
-  font-size: 0.85rem;
+  padding: 10px 36px 10px 14px;
+  font-size: 0.9rem;
   font-family: inherit;
   cursor: pointer;
   transition: border-color 0.2s ease, background-color 0.2s ease;
@@ -479,9 +503,8 @@ main[id] { scroll-margin-top: 5rem; }
   -webkit-appearance: none;
   background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23F5F0E8' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: right 10px center;
+  background-position: right 12px center;
   background-size: 14px;
-  padding-right: 32px;
 }
 .spice-select:hover {
   border-color: var(--brand);
@@ -545,13 +568,14 @@ main[id] { scroll-margin-top: 5rem; }
 .faq-item summary {
   list-style: none;
   cursor: pointer;
-  padding: 1rem 3rem 1rem 1.25rem;
+  padding: 1.1rem 3rem 1.1rem 1.25rem;
   font-family: var(--font-heading);
   font-size: 1.1rem;
   font-weight: 700;
   color: var(--bone);
   position: relative;
   transition: color 0.2s ease;
+  min-height: var(--tap-min);
 }
 .faq-item summary::-webkit-details-marker { display: none; }
 .faq-item summary::after {
@@ -599,6 +623,7 @@ main[id] { scroll-margin-top: 5rem; }
 
 /* =============================================================
    21. COMPONENT — Floating WhatsApp button
+   On mobile the FAB sits above the sticky order bar
    ============================================================= */
 .wa-float {
   position: fixed;
@@ -644,6 +669,7 @@ main[id] { scroll-margin-top: 5rem; }
   height: 1em;
   vertical-align: -0.125em;
   fill: currentColor;
+  flex-shrink: 0;
 }
 
 /* =============================================================
@@ -666,13 +692,11 @@ main[id] { scroll-margin-top: 5rem; }
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
+#mobile-menu a { min-height: var(--tap-min); display: flex; align-items: center; }
+#mobile-menu .btn-primary { justify-content: center; }
 
 /* =============================================================
    24. COMPONENT — Menu card filtering
-   The filter animates display:none → block; CSS animations restart
-   automatically when an element becomes rendered. Keeping the
-   animation scoped to .menu-card means the reveal system (which
-   uses inline opacity/transform) never fights with the filter.
    ============================================================= */
 .menu-card {
   animation: menu-card-in 0.4s ease-out;
@@ -684,7 +708,6 @@ main[id] { scroll-margin-top: 5rem; }
 
 /* =============================================================
    25. COMPONENT — Scroll reveal
-   Uses visibility:hidden so off-screen items are not focusable.
    ============================================================= */
 .reveal-hidden {
   opacity: 0 !important;
@@ -693,7 +716,35 @@ main[id] { scroll-margin-top: 5rem; }
 }
 
 /* =============================================================
-   26. COMPONENT — Misc
+   26. COMPONENT — Sticky mobile order bar
+   Hidden by default. Shown only < 1024px via media query below.
+   ============================================================= */
+.mobile-order-bar { display: none; }
+
+/* =============================================================
+   27. COMPONENT — Footer social icons (min 44px tap target)
+   ============================================================= */
+.footer-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--tap-min);
+  height: var(--tap-min);
+  border-radius: 50%;
+  color: var(--muted);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.footer-icon:hover { color: var(--brand-on-dark); }
+@media (hover: hover) and (pointer: fine) {
+  .footer-icon:hover { background-color: rgba(255, 255, 255, 0.06); }
+}
+.footer-icon:focus-visible {
+  outline: 2px solid var(--brand-accent);
+  outline-offset: 2px;
+}
+
+/* =============================================================
+   28. COMPONENT — Misc
    ============================================================= */
 .skip-link {
   position: absolute;
@@ -715,7 +766,7 @@ main[id] { scroll-margin-top: 5rem; }
 .footer-bottom { color: var(--faint); }
 
 /* =============================================================
-   27. RESPONSIVE — sm (640px)
+   29. RESPONSIVE — sm (640px)
    ============================================================= */
 @media (min-width: 640px) {
   .container,
@@ -741,7 +792,7 @@ main[id] { scroll-margin-top: 5rem; }
 }
 
 /* =============================================================
-   28. RESPONSIVE — md (768px)
+   30. RESPONSIVE — md (768px)
    ============================================================= */
 @media (min-width: 768px) {
   .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -751,7 +802,7 @@ main[id] { scroll-margin-top: 5rem; }
 }
 
 /* =============================================================
-   29. RESPONSIVE — lg (1024px)
+   31. RESPONSIVE — lg (1024px)
    ============================================================= */
 @media (min-width: 1024px) {
   .container,
@@ -773,14 +824,93 @@ main[id] { scroll-margin-top: 5rem; }
 }
 
 /* =============================================================
-   30. RESPONSIVE — xl (1280px)
+   32. RESPONSIVE — xl (1280px)
    ============================================================= */
 @media (min-width: 1280px) {
   .xl\:text-6xl { font-size: 3.75rem; line-height: 1; }
 }
 
 /* =============================================================
-   31. ACCESSIBILITY — reduced motion
+   33. MOBILE ONLY — sticky order bar (< 1024px)
+   Lives here (not in a max-width block above) because it must
+   override the .hidden pattern used elsewhere.
+   ============================================================= */
+@media (max-width: 1023px) {
+  .mobile-order-bar {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 45;
+    background-color: rgba(26, 24, 20, 0.98);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-top: 1px solid var(--border);
+    padding: 10px 12px;
+    padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+    gap: 8px;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.5);
+    align-items: stretch;
+  }
+
+  .mobile-order-bar__primary {
+    flex: 1;
+    min-height: 48px;
+    background-color: var(--brand-bg);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background-color 0.2s ease;
+  }
+  .mobile-order-bar__primary:focus-visible {
+    outline: 3px solid var(--brand-accent);
+    outline-offset: 2px;
+  }
+
+  .mobile-order-bar__secondary {
+    min-width: 48px;
+    min-height: 48px;
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--border);
+    color: var(--bone);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    transition: background-color 0.2s ease;
+  }
+  .mobile-order-bar__secondary:focus-visible {
+    outline: 3px solid var(--brand-accent);
+    outline-offset: 2px;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .mobile-order-bar__primary:hover { background-color: var(--brand-bg-hover); }
+    .mobile-order-bar__secondary:hover { background-color: rgba(255, 255, 255, 0.14); }
+  }
+
+  /* Push content above the fixed bar so nothing is obscured */
+  body { padding-bottom: calc(var(--mobile-bar-h) + env(safe-area-inset-bottom, 0px)); }
+
+  /* Float the FAB above the sticky bar so they don't overlap */
+  .wa-float {
+    bottom: calc(var(--mobile-bar-h) + 16px + env(safe-area-inset-bottom, 0px));
+  }
+
+  /* Compensate the scroll-margin so anchors don't land under the bar */
+  :target,
+  section[id],
+  main[id] { scroll-margin-top: 5rem; }
+}
+
+/* =============================================================
+   34. ACCESSIBILITY — reduced motion
    ============================================================= */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -801,11 +931,12 @@ main[id] { scroll-margin-top: 5rem; }
 }
 
 /* =============================================================
-   32. PRINT
+   35. PRINT
    ============================================================= */
 @media print {
   .header-bg,
   .wa-float,
+  .mobile-order-bar,
   .btn-primary,
   .btn-secondary,
   .btn-outline-yellow,
@@ -814,7 +945,7 @@ main[id] { scroll-margin-top: 5rem; }
   .socials {
     display: none !important;
   }
-  body { background: #fff; color: #000; }
+  body { background: #fff; color: #000; padding-bottom: 0; }
   a::after {
     content: " (" attr(href) ")";
     font-size: 0.85em;

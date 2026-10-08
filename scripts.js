@@ -153,8 +153,6 @@
         - Toggles .hidden (display:none). The CSS animation on
           .menu-card restarts automatically on display change.
         - Announced via the #menu-status live region.
-        - No inline opacity/transform → no conflict with the
-          scroll-reveal system (which owns those properties).
      ----------------------------------------------------------- */
   function initMenuFilter() {
     const buttons = document.querySelectorAll('.filter-btn');
@@ -197,8 +195,8 @@
 
   /* -----------------------------------------------------------
      3. Spice selectors
-        The wrapping <label class="spice-field"> already provides
-        the accessible name for each <select> — no JS association
+        The wrapping <label class="spice-field"> provides the
+        accessible name for each <select> — no JS association
         needed. This only rewrites the WhatsApp CTA link on change.
      ----------------------------------------------------------- */
   function initSpiceSelectors() {
@@ -222,8 +220,7 @@
 
   /* -----------------------------------------------------------
      4. Scroll reveal
-        Menu cards are excluded — they own their own CSS animation
-        and would otherwise fight the reveal system for opacity.
+        Menu cards are excluded — they own their own CSS animation.
      ----------------------------------------------------------- */
   function initScrollReveal() {
     if (!('IntersectionObserver' in window)) return;
@@ -262,7 +259,6 @@
      5. Smooth anchor scroll
         Reads header height dynamically. Respects reduced motion.
         Moves focus to the target for keyboard/AT users.
-        Skips bare "#" links (the logo now points at #hero).
      ----------------------------------------------------------- */
   function initSmoothScroll() {
     const header = document.querySelector('.header-bg');
@@ -311,7 +307,7 @@
 
   /* -----------------------------------------------------------
      7. Append "(opens in a new tab)" hint to external links
-        programmatically so we don't have to repeat it ~15× in HTML.
+        programmatically so we don't have to repeat it in HTML.
      ----------------------------------------------------------- */
   function initExternalLinkHints() {
     document.querySelectorAll('a[target="_blank"]').forEach(link => {
