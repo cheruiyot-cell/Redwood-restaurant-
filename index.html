@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en-KE">
 <head>
@@ -13,10 +12,8 @@
     <meta name="theme-color" content="#E53935" />
     <link rel="canonical" href="https://redwood.co.ke" />
 
-    <!-- Favicon (inline SVG — no external file, no 404) -->
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23E53935'/%3E%3Ctext x='50' y='74' font-family='Georgia,serif' font-size='68' font-weight='bold' fill='white' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E" />
 
-    <!-- Open Graph (1200×630 for LinkedIn / Twitter / Facebook) -->
     <meta property="og:title" content="Real Nyama Choma. Delivered in 30–45 Minutes. From KES 150." />
     <meta property="og:description"
         content="Flame-grilled pork ribs, Hustler's Wraps and hot irio — cooked to order, delivered across Nairobi. Pay by M-Pesa. Order on WhatsApp in 30 seconds." />
@@ -33,7 +30,6 @@
     <meta name="twitter:image"
         content="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1200&h=630&fit=crop&q=80" />
 
-    <!-- Fonts: preconnect first, then stylesheet -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://images.unsplash.com" />
@@ -42,7 +38,6 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;600;700&display=swap" />
 
-    <!-- Hero image preload (matches the <img> srcset/sizes below) -->
     <link rel="preload" as="image"
         href="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1200&q=80"
         imagesrcset="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&q=80 800w,
@@ -81,7 +76,6 @@
             "priceRange": "KES 150-1000",
             "paymentAccepted": "M-Pesa, Cash, Credit Card",
             "acceptsReservations": "False",
-            "hasMenu": "https://redwood.co.ke/#full-menu",
             "aggregateRating": {
                 "@type": "AggregateRating",
                 "ratingValue": "4.8",
@@ -132,7 +126,6 @@
         }
     </script>
 
-    <!-- No-JS fallback: make the mobile nav usable and hide the toggle -->
     <noscript>
         <style>
             @media (max-width: 1023px) {
@@ -140,6 +133,7 @@
                 #mobile-menu { max-height: none !important; opacity: 1 !important; overflow: visible !important; }
                 #menu-toggle { display: none !important; }
                 .mobile-order-bar { display: none !important; }
+                .back-to-top { display: none !important; }
             }
         </style>
     </noscript>
@@ -167,7 +161,8 @@
                         <svg class="icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.11-.27 11.36 11.36 0 0 0 3.58.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.36 11.36 0 0 0 .57 3.58 1 1 0 0 1-.25 1.11z"/></svg>
                         Call
                     </a>
-                    <a href="https://wa.me/254702555093?text=Hi%20Redwood!%20I%20want%20to%20order."
+                    <a href="https://wa.me/254702555093"
+                        data-wa="general"
                         target="_blank" rel="noopener noreferrer"
                         class="btn-primary px-5 py-2.5 rounded-full text-sm inline-flex items-center gap-2">
                         <svg class="icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
@@ -190,7 +185,9 @@
                 class="mt-3 block py-3 text-center border border-subtle rounded-full text-bone hover:text-primary">
                 Call +254 702 555 093
             </a>
-            <a href="https://wa.me/254702555093?text=Hi%20Redwood!%20I%20want%20to%20order." target="_blank"
+            <a href="https://wa.me/254702555093"
+                data-wa="general"
+                target="_blank"
                 rel="noopener noreferrer"
                 class="mt-3 btn-primary py-3 rounded-full text-center flex items-center justify-center gap-2">
                 <svg class="icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
@@ -201,7 +198,6 @@
 
     <main id="main-content">
 
-        <!-- ============ HERO ============ -->
         <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden" aria-labelledby="hero-heading">
             <div class="absolute inset-0 z-0">
                 <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&q=80"
@@ -225,7 +221,8 @@
                     Pay by M-Pesa. Order on WhatsApp in 30 seconds.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="https://wa.me/254702555093?text=Hi%20Redwood!%20I%20want%20to%20place%20an%20order."
+                    <a href="https://wa.me/254702555093"
+                        data-wa="general"
                         target="_blank" rel="noopener noreferrer"
                         class="btn-primary px-8 py-4 rounded-full text-lg inline-flex items-center justify-center gap-2">
                         <svg class="icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
@@ -243,7 +240,6 @@
             </div>
         </section>
 
-        <!-- ============ TRUST BAR ============ -->
         <section class="trust-bar py-5 bg-dark-card border-y border-subtle" aria-label="Quick facts">
             <div class="container">
                 <ul class="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm text-bone text-center">
@@ -260,7 +256,6 @@
             </div>
         </section>
 
-        <!-- ============ SIGNATURE DISHES ============ -->
         <section id="signature" class="py-20 bg-charcoal" aria-labelledby="signature-heading">
             <div class="container">
                 <h2 id="signature-heading" class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-4 text-bone">
@@ -281,7 +276,11 @@
                             <h3 class="card-title text-2xl sm:text-3xl font-bold mb-2">Glazed Pork Ribs</h3>
                             <p class="text-muted mb-4">Six hours on the smoke, glazed with local honey, served on steaming irio. <span class="text-bone/80">Serves 1–2.</span></p>
                             <p class="text-primary font-bold text-xl mb-6">From KES 450</p>
-                            <a href="https://wa.me/254702555093?text=Hi%20Redwood!%20I'd%20like%20the%20Glazed%20Pork%20Ribs%20platter%20(KES%20450)."
+                            <a href="https://wa.me/254702555093"
+                                data-wa="dish"
+                                data-item="Glazed Pork Ribs"
+                                data-price="KES 450"
+                                data-spice-fixed="Medium"
                                 target="_blank" rel="noopener noreferrer"
                                 class="btn-primary inline-flex items-center gap-2 px-6 py-3 rounded-full">
                                 <svg class="icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
@@ -301,7 +300,11 @@
                             <h3 class="card-title text-2xl sm:text-3xl font-bold mb-2">The Hustler's Wrap</h3>
                             <p class="text-muted mb-4">Flame-grilled <span lang="sw">nyama choma</span>, house <span lang="sw">pili pili</span>, fresh <span lang="sw">kachumbari</span>, rolled in soft <span lang="sw">chapati</span>. <span class="text-bone/80">Built for a 20-minute lunch break.</span></p>
                             <p class="text-primary font-bold text-xl mb-6">From KES 150</p>
-                            <a href="https://wa.me/254702555093?text=Hi%20Redwood!%20I'd%20like%20one%20Hustler's%20Wrap%20(KES%20150)."
+                            <a href="https://wa.me/254702555093"
+                                data-wa="dish"
+                                data-item="The Hustler's Wrap"
+                                data-price="KES 150"
+                                data-spice-fixed="Medium"
                                 target="_blank" rel="noopener noreferrer"
                                 class="btn-primary inline-flex items-center gap-2 px-6 py-3 rounded-full">
                                 <svg class="icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
@@ -313,7 +316,6 @@
             </div>
         </section>
 
-        <!-- ============ TODAY'S SPECIAL (moved up) ============ -->
         <section class="py-16 special-section" aria-labelledby="special-heading">
             <div class="container text-center">
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
@@ -328,7 +330,9 @@
                     <p class="text-lg text-white/90 m-0">Two Nyama Choma Platters + free ugali. <strong>KES 850.</strong></p>
                 </div>
                 <p class="text-white/90 mb-6 text-sm">Order before 3pm to lock in the price.</p>
-                <a href="https://wa.me/254702555093?text=SPECIAL" target="_blank" rel="noopener noreferrer"
+                <a href="https://wa.me/254702555093"
+                    data-wa="special"
+                    target="_blank" rel="noopener noreferrer"
                     class="btn-secondary inline-flex items-center gap-2 px-8 py-4 rounded-full text-lg">
                     <svg class="icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
                     Claim today's special
@@ -336,7 +340,6 @@
             </div>
         </section>
 
-        <!-- ============ WHY REDWOOD ============ -->
         <section class="py-16 bg-dark-card" aria-labelledby="trust-heading">
             <div class="container">
                 <h2 id="trust-heading" class="font-display text-3xl sm:text-4xl font-bold text-center mb-4">Three things we do differently</h2>
@@ -367,7 +370,6 @@
             </div>
         </section>
 
-        <!-- ============ HOW IT WORKS ============ -->
         <section class="py-20 bg-charcoal" aria-labelledby="how-it-works-heading">
             <div class="container">
                 <h2 id="how-it-works-heading" class="font-display text-3xl sm:text-4xl font-bold text-center mb-16">How it works</h2>
@@ -391,7 +393,6 @@
             </div>
         </section>
 
-        <!-- ============ FULL MENU ============ -->
         <section class="py-20 bg-dark-card" id="full-menu" aria-labelledby="full-menu-heading">
             <div class="container">
                 <h2 id="full-menu-heading" class="font-display text-3xl sm:text-4xl font-bold text-center mb-4">The full menu</h2>
@@ -407,7 +408,6 @@
 
                 <div id="menu-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-                    <!-- Item 1 -->
                     <div class="menu-card bg-charcoal rounded-2xl overflow-hidden shadow-lg card-lift relative"
                          data-category="pork" data-item="Glazed Pork Ribs" data-price="KES 450" data-spice="true">
                         <span class="badge-most-ordered">Most Ordered</span>
@@ -422,14 +422,17 @@
                             <p class="text-muted text-sm mb-1">Smoked six hours, honey glaze, steaming irio. <span class="serves-tag">Serves 1–2</span></p>
                             <p class="text-primary font-bold text-lg mb-3">KES 450</p>
                             <label class="spice-field">
-                                <span class="spice-label">Spice level</span>
+                                <span class="spice-label">Spice level — Glazed Pork Ribs</span>
                                 <select class="spice-select">
                                     <option value="Mild">Mild</option>
                                     <option value="Medium" selected>Medium</option>
                                     <option value="Pili Pili Proper">Pili Pili Proper</option>
                                 </select>
                             </label>
-                            <a href="https://wa.me/254702555093?text=Hi%20Redwood!%20I'd%20like%20the%20Glazed%20Pork%20Ribs%20(KES%20450)%20%E2%80%94%20Medium."
+                            <a href="https://wa.me/254702555093"
+                                data-wa="dish"
+                                data-item="Glazed Pork Ribs"
+                                data-price="KES 450"
                                 target="_blank" rel="noopener noreferrer"
                                 class="btn-primary order-cta inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm mt-3">
                                 <svg class="icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
@@ -438,7 +441,6 @@
                         </div>
                     </div>
 
-                    <!-- Item 2 -->
                     <div class="menu-card bg-charcoal rounded-2xl overflow-hidden shadow-lg card-lift"
                          data-category="nyamachoma" data-item="Nyama Choma Platter" data-price="KES 500" data-spice="true">
                         <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=500&q=80"
@@ -452,14 +454,17 @@
                             <p class="text-muted text-sm mb-1">Fire-grilled beef, <span lang="sw">kachumbari</span>, <span lang="sw">ugali</span> or <span lang="sw">irio</span>. <span class="serves-tag">Serves 2</span></p>
                             <p class="text-primary font-bold text-lg mb-3">KES 500</p>
                             <label class="spice-field">
-                                <span class="spice-label">Spice level</span>
+                                <span class="spice-label">Spice level — Nyama Choma Platter</span>
                                 <select class="spice-select">
                                     <option value="Mild">Mild</option>
                                     <option value="Medium" selected>Medium</option>
                                     <option value="Pili Pili Proper">Pili Pili Proper</option>
                                 </select>
                             </label>
-                            <a href="https://wa.me/254702555093?text=Hi%20Redwood!%20I'd%20like%20the%20Nyama%20Choma%20Platter%20(KES%20500)%20%E2%80%94%20Medium."
+                            <a href="https://wa.me/254702555093"
+                                data-wa="dish"
+                                data-item="Nyama Choma Platter"
+                                data-price="KES 500"
                                 target="_blank" rel="noopener noreferrer"
                                 class="btn-primary order-cta inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm mt-3">
                                 <svg class="icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
@@ -468,7 +473,6 @@
                         </div>
                     </div>
 
-                    <!-- Item 3 -->
                     <div class="menu-card bg-charcoal rounded-2xl overflow-hidden shadow-lg card-lift"
                          data-category="wraps" data-item="The Hustler's Wrap" data-price="KES 150" data-spice="true">
                         <img src="https://images.weserv.nl/?url=i.ibb.co/RTNdGT1q/1784543431198.png&amp;w=600&amp;output=webp&amp;q=80"
@@ -482,14 +486,17 @@
                             <p class="text-muted text-sm mb-1"><span lang="sw">Nyama choma</span>, <span lang="sw">pili pili</span>, <span lang="sw">kachumbari</span> in a <span lang="sw">chapati</span>. <span class="serves-tag">Serves 1</span></p>
                             <p class="text-primary font-bold text-lg mb-3">KES 150</p>
                             <label class="spice-field">
-                                <span class="spice-label">Spice level</span>
+                                <span class="spice-label">Spice level — The Hustler's Wrap</span>
                                 <select class="spice-select">
                                     <option value="Mild">Mild</option>
                                     <option value="Medium" selected>Medium</option>
                                     <option value="Pili Pili Proper">Pili Pili Proper</option>
                                 </select>
                             </label>
-                            <a href="https://wa.me/254702555093?text=Hi%20Redwood!%20I'd%20like%20one%20Hustler's%20Wrap%20(KES%20150)%20%E2%80%94%20Medium."
+                            <a href="https://wa.me/254702555093"
+                                data-wa="dish"
+                                data-item="The Hustler's Wrap"
+                                data-price="KES 150"
                                 target="_blank" rel="noopener noreferrer"
                                 class="btn-primary order-cta inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm mt-3">
                                 <svg class="icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
@@ -498,7 +505,6 @@
                         </div>
                     </div>
 
-                    <!-- Item 4 -->
                     <div class="menu-card bg-charcoal rounded-2xl overflow-hidden shadow-lg card-lift"
                          data-category="wraps" data-item="Chapati (5 pcs)" data-price="KES 150" data-spice="false">
                         <img src="https://images.weserv.nl/?url=i.ibb.co/v6rPTMxG/1784551237074.png&amp;w=600&amp;output=webp&amp;q=80"
@@ -511,7 +517,10 @@
                             <h3 class="card-title text-xl font-bold mb-1">Chapati (5 pcs)</h3>
                             <p class="text-muted text-sm mb-1">Soft, organic, pan-grilled.</p>
                             <p class="text-primary font-bold text-lg mb-3">KES 150</p>
-                            <a href="https://wa.me/254702555093?text=Hi%20Redwood!%20I'd%20like%20Chapati%20(5%20pcs)%20(KES%20150)."
+                            <a href="https://wa.me/254702555093"
+                                data-wa="dish"
+                                data-item="Chapati (5 pcs)"
+                                data-price="KES 150"
                                 target="_blank" rel="noopener noreferrer"
                                 class="btn-primary order-cta inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm">
                                 <svg class="icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
@@ -520,7 +529,6 @@
                         </div>
                     </div>
 
-                    <!-- Item 5 -->
                     <div class="menu-card bg-charcoal rounded-2xl overflow-hidden shadow-lg card-lift"
                          data-category="sides" data-item="Steaming Irio" data-price="KES 200" data-spice="false">
                         <img src="https://images.weserv.nl/?url=i.ibb.co/hF830wy1/1784542873230.png&amp;w=600&amp;output=webp&amp;q=80"
@@ -533,7 +541,10 @@
                             <h3 class="card-title text-xl font-bold mb-1">Steaming Irio</h3>
                             <p class="text-muted text-sm mb-1">Mashed peas and potatoes with corn.</p>
                             <p class="text-primary font-bold text-lg mb-3">KES 200</p>
-                            <a href="https://wa.me/254702555093?text=Hi%20Redwood!%20I'd%20like%20Steaming%20Irio%20(KES%20200)."
+                            <a href="https://wa.me/254702555093"
+                                data-wa="dish"
+                                data-item="Steaming Irio"
+                                data-price="KES 200"
                                 target="_blank" rel="noopener noreferrer"
                                 class="btn-primary order-cta inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm">
                                 <svg class="icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
@@ -542,7 +553,6 @@
                         </div>
                     </div>
 
-                    <!-- Item 6 -->
                     <div class="menu-card bg-charcoal rounded-2xl overflow-hidden shadow-lg card-lift"
                          data-category="pork" data-item="Pork Sausages (5 pcs)" data-price="KES 250" data-spice="true">
                         <img src="https://images.weserv.nl/?url=i.ibb.co/n8QfzCV6/1784543297457.png&amp;w=600&amp;output=webp&amp;q=80"
@@ -556,14 +566,17 @@
                             <p class="text-muted text-sm mb-1">Coarse-ground, grilled over open flame.</p>
                             <p class="text-primary font-bold text-lg mb-3">KES 250</p>
                             <label class="spice-field">
-                                <span class="spice-label">Spice level</span>
+                                <span class="spice-label">Spice level — Pork Sausages</span>
                                 <select class="spice-select">
                                     <option value="Mild" selected>Mild</option>
                                     <option value="Medium">Medium</option>
                                     <option value="Pili Pili Proper">Pili Pili Proper</option>
                                 </select>
                             </label>
-                            <a href="https://wa.me/254702555093?text=Hi%20Redwood!%20I'd%20like%20Pork%20Sausages%20(5%20pcs)%20(KES%20250)%20%E2%80%94%20Mild."
+                            <a href="https://wa.me/254702555093"
+                                data-wa="dish"
+                                data-item="Pork Sausages (5 pcs)"
+                                data-price="KES 250"
                                 target="_blank" rel="noopener noreferrer"
                                 class="btn-primary order-cta inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm mt-3">
                                 <svg class="icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
@@ -572,7 +585,6 @@
                         </div>
                     </div>
 
-                    <!-- Item 7 -->
                     <div class="menu-card bg-charcoal rounded-2xl overflow-hidden shadow-lg card-lift"
                          data-category="nyamachoma" data-item="Spicy Chicken Wings" data-price="KES 420" data-spice="true">
                         <img src="https://images.weserv.nl/?url=i.ibb.co/B5g7NP43/1784551556649.png&amp;w=600&amp;output=webp&amp;q=80"
@@ -586,14 +598,17 @@
                             <p class="text-muted text-sm mb-1">Marinated overnight, chargrilled.</p>
                             <p class="text-primary font-bold text-lg mb-3">KES 420</p>
                             <label class="spice-field">
-                                <span class="spice-label">Spice level</span>
+                                <span class="spice-label">Spice level — Spicy Chicken Wings</span>
                                 <select class="spice-select">
                                     <option value="Mild">Mild</option>
                                     <option value="Medium">Medium</option>
                                     <option value="Pili Pili Proper" selected>Pili Pili Proper</option>
                                 </select>
                             </label>
-                            <a href="https://wa.me/254702555093?text=Hi%20Redwood!%20I'd%20like%20Spicy%20Chicken%20Wings%20(KES%20420)%20%E2%80%94%20Pili%20Pili%20Proper."
+                            <a href="https://wa.me/254702555093"
+                                data-wa="dish"
+                                data-item="Spicy Chicken Wings"
+                                data-price="KES 420"
                                 target="_blank" rel="noopener noreferrer"
                                 class="btn-primary order-cta inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm mt-3">
                                 <svg class="icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
@@ -602,7 +617,6 @@
                         </div>
                     </div>
 
-                    <!-- Item 8 -->
                     <div class="menu-card bg-charcoal rounded-2xl overflow-hidden shadow-lg card-lift"
                          data-category="sides" data-item="Kachumbari Salad" data-price="KES 150" data-spice="false">
                         <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=500&q=80"
@@ -615,7 +629,10 @@
                             <h3 class="card-title text-xl font-bold mb-1">Kachumbari Salad</h3>
                             <p class="text-muted text-sm mb-1">Fresh tomato, onion, cilantro, lime.</p>
                             <p class="text-primary font-bold text-lg mb-3">KES 150</p>
-                            <a href="https://wa.me/254702555093?text=Hi%20Redwood!%20I'd%20like%20Kachumbari%20Salad%20(KES%20150)."
+                            <a href="https://wa.me/254702555093"
+                                data-wa="dish"
+                                data-item="Kachumbari Salad"
+                                data-price="KES 150"
                                 target="_blank" rel="noopener noreferrer"
                                 class="btn-primary order-cta inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm">
                                 <svg class="icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
@@ -627,7 +644,6 @@
             </div>
         </section>
 
-        <!-- ============ TESTIMONIALS ============ -->
         <section class="py-20 bg-charcoal" aria-labelledby="testimonials-heading">
             <div class="container">
                 <h2 id="testimonials-heading" class="font-display text-3xl sm:text-4xl font-bold text-center mb-4">What our customers say</h2>
@@ -652,7 +668,6 @@
             </div>
         </section>
 
-        <!-- ============ STORY ============ -->
         <section id="story" class="py-20 bg-charcoal" aria-labelledby="story-heading">
             <div class="container">
                 <div class="grid lg:grid-cols-2 gap-12 items-center">
@@ -679,7 +694,6 @@
             </div>
         </section>
 
-        <!-- ============ FAQ ============ -->
         <section id="faq" class="py-20 bg-dark-card" aria-labelledby="faq-heading">
             <div class="faq-container">
                 <h2 id="faq-heading" class="font-display text-3xl sm:text-4xl font-bold text-center mb-4">Straight answers</h2>
@@ -723,13 +737,17 @@
 
                     <details class="faq-item">
                         <summary>Can I order for a group?</summary>
-                        <p>Yes. Message us on WhatsApp with the headcount and time. For 6+ people we'll confirm a pickup or delivery window in writing.</p>
+                        <p>Yes. Message us on WhatsApp with the headcount and time. For 6+ people we'll confirm a pickup or delivery window in writing.
+                            <a href="https://wa.me/254702555093"
+                                data-wa="group"
+                                target="_blank" rel="noopener noreferrer"
+                                class="text-primary hover:text-accent underline">Start a group order →</a>
+                        </p>
                     </details>
                 </div>
             </div>
         </section>
 
-        <!-- ============ CONTACT ============ -->
         <section id="contact" class="py-20 bg-charcoal" aria-labelledby="contact-heading">
             <div class="container">
                 <h2 id="contact-heading" class="font-display text-3xl sm:text-4xl font-bold text-center mb-12">Find us. Or we'll find you.</h2>
@@ -747,14 +765,22 @@
                     <div>
                         <h3 class="card-title text-2xl font-bold mb-2">Delivery zones</h3>
                         <p class="text-muted">CBD · Westlands · Kilimani · Upperhill · Parklands</p>
-                        <p class="text-muted text-sm mt-1">Not sure if we reach you? Send us your location on WhatsApp — we'll confirm in under a minute.</p>
+                        <p class="text-muted text-sm mt-1">Not sure if we reach you?
+                            <a href="https://wa.me/254702555093"
+                                data-wa="deliveryZone"
+                                target="_blank" rel="noopener noreferrer"
+                                class="text-primary hover:text-accent underline">Send us your location on WhatsApp</a>
+                            — we'll confirm in under a minute.
+                        </p>
                     </div>
                     <div>
                         <h3 class="card-title text-2xl font-bold mb-2">Payment</h3>
                         <p class="text-muted">M-Pesa · Cash · Card on delivery</p>
                     </div>
                     <div class="flex flex-wrap gap-6 pt-4">
-                        <a href="https://wa.me/254702555093" target="_blank" rel="noopener noreferrer"
+                        <a href="https://wa.me/254702555093"
+                            data-wa="general"
+                            target="_blank" rel="noopener noreferrer"
                             class="text-primary hover:text-accent inline-flex items-center gap-2">
                             <svg class="icon text-2xl" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
                             <span>WhatsApp us</span>
@@ -775,7 +801,6 @@
         </section>
     </main>
 
-    <!-- ============ FOOTER ============ -->
     <footer class="bg-dark-card border-t border-subtle py-12">
         <div class="container">
             <div class="grid md:grid-cols-3 gap-8 text-center md:text-left">
@@ -796,7 +821,8 @@
                 <div>
                     <h3 class="font-semibold mb-3">Get the Friday special first</h3>
                     <p class="text-sm text-muted mb-3">One WhatsApp message. We'll add you to the list.</p>
-                    <a href="https://wa.me/254702555093?text=Hi%20Redwood!%20Please%20add%20me%20to%20the%20specials%20list."
+                    <a href="https://wa.me/254702555093"
+                        data-wa="specialsList"
                         target="_blank" rel="noopener noreferrer"
                         class="btn-primary inline-flex items-center gap-2 px-6 py-2 rounded-full text-sm">
                         <svg class="icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
@@ -825,17 +851,15 @@
         </div>
     </footer>
 
-    <!-- Floating WhatsApp button -->
-    <a href="https://wa.me/254702555093?text=Hi%20Redwood!%20I'd%20like%20to%20place%20an%20order." target="_blank"
-        rel="noopener noreferrer" class="wa-float" aria-label="Order now via WhatsApp">
-        <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
-            <path fill="#fff" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+    <button id="back-to-top" class="back-to-top" type="button" aria-label="Back to top">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+            <path fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" d="M6 15l6-6 6 6"/>
         </svg>
-    </a>
+    </button>
 
-    <!-- Sticky mobile order bar (mobile only, hides when JS disabled) -->
     <div class="mobile-order-bar" role="region" aria-label="Quick order">
-        <a href="https://wa.me/254702555093?text=Hi%20Redwood!%20I'd%20like%20to%20place%20an%20order."
+        <a href="https://wa.me/254702555093"
+           data-wa="general"
            target="_blank" rel="noopener noreferrer"
            class="mobile-order-bar__primary">
             <svg class="icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>

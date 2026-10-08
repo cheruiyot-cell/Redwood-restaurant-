@@ -1,12 +1,73 @@
 /* =============================================================
    scripts.js — Redwood Restaurant
    Progressive enhancement only. No dependencies.
+
+   NOTE: 254702555093 is a DEMO WhatsApp number for portfolio
+   purposes. Replace it in WA_NUMBER below before any commercial
+   use. All WhatsApp links on the page read from the template
+   system in this file, so a single edit updates every CTA.
    ============================================================= */
 
 (function () {
   'use strict';
 
-  /* Shared: live reduced-motion check (users can toggle OS setting) */
+  /* ============================================================
+     WhatsApp template system
+     ------------------------------------------------------------
+     Every link with a `data-wa="<key>"` attribute gets its href
+     composed from these templates at runtime. To change the
+     message for any CTA, edit the corresponding template here.
+     ============================================================ */
+  const WA_NUMBER = '254702555093';
+
+  const WA_TEMPLATES = {
+    // Generic order — hero, header, mobile menu, bottom bar, contact.
+    // Leaves blank prompts so the customer fills them in on WhatsApp.
+    general: () =>
+      `Hi Redwood! I'd like to place an order.\n\n` +
+      `• Items: \n` +
+      `• Delivery location: \n` +
+      `• Preferred time: `,
+
+    // Single dish — reads data-item / data-price from the CTA
+    // and, if present, the value of the sibling .spice-select.
+    dish: (d) => {
+      const qty = d.qty && d.qty > 1 ? `${d.qty}× ` : '';
+      const spice = d.spice ? ` — ${d.spice}` : '';
+      return `Hi Redwood! I'd like ${qty}${d.item} (${d.price})${spice}.`;
+    },
+
+    // Today's promo — matches the Special section copy.
+    special: () =>
+      `Hi Redwood! I'd like to claim today's special:\n\n` +
+      `• 2× Nyama Choma Platters + free ugali — KES 850\n\n` +
+      `Delivery location: `,
+
+    // Group / catering enquiries — FAQ.
+    group: () =>
+      `Hi Redwood! I'd like to place a group order.\n\n` +
+      `• Headcount: \n` +
+      `• Preferred time: \n` +
+      `• Delivery location: \n` +
+      `• Items: `,
+
+    // Delivery-zone check — Contact section.
+    deliveryZone: () =>
+      `Hi Redwood! Quick check — do you deliver to my area?\n\n` +
+      `• My location: `,
+
+    // Friday specials list signup — footer.
+    specialsList: () =>
+      `Hi Redwood! Please add me to the Friday specials list.`,
+  };
+
+  function buildWaUrl(key, data) {
+    const tpl = WA_TEMPLATES[key] || WA_TEMPLATES.general;
+    const text = tpl(data || {});
+    return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`;
+  }
+
+  /* Shared: live reduced-motion check */
   const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
   const prefersReducedMotion = () => reducedMotionQuery.matches;
 
@@ -17,9 +78,11 @@
   }
 
   function init() {
+    initWhatsAppTemplates();
     initMobileMenu();
     initMenuFilter();
-    initSpiceSelectors();
+    initBackToTop();
+    initFaqAccordion();
     initScrollReveal();
     initSmoothScroll();
     initSpecialDay();
@@ -28,12 +91,43 @@
   }
 
   /* -----------------------------------------------------------
-     1. Mobile menu toggle
-        - Escape closes
-        - Click outside closes
-        - Focus is trapped while open
-        - Body scroll is locked (with scrollbar-width compensation)
-        - Close animation completes via transitionend, not a magic timer
+     1. WhatsApp template wiring
+        Any <a data-wa="..."> gets its href composed here. Menu-card
+        CTAs read the spice level from the sibling .spice-select if
+        present, and stay in sync when the select changes.
+     ----------------------------------------------------------- */
+  function initWhatsAppTemplates() {
+    document.querySelectorAll('a[data-wa]').forEach(el => {
+      const key = el.getAttribute('data-wa');
+      const card = el.closest('.menu-card');
+      const select = card ? card.querySelector('.spice-select') : null;
+
+      const ctx = {
+        item: el.getAttribute('data-item') || '',
+        price: el.getAttribute('data-price') || '',
+        qty: parseInt(el.getAttribute('data-qty') || '1', 10),
+        spice: select
+          ? select.value
+          : (el.getAttribute('data-spice-fixed') || ''),
+      };
+
+      el.href = buildWaUrl(key, ctx);
+
+      if (select) {
+        select.addEventListener('change', () => {
+          ctx.spice = select.value;
+          el.href = buildWaUrl(key, ctx);
+        });
+      }
+    });
+  }
+
+  /* -----------------------------------------------------------
+     2. Mobile menu toggle
+        Escape closes, outside-click closes, focus is trapped while
+        open, body scroll is locked with scrollbar-width compensation.
+        Adds `menu-open` to <body> so floating UI (back-to-top,
+        mobile order bar) can hide while the menu is expanded.
      ----------------------------------------------------------- */
   function initMobileMenu() {
     const toggle = document.getElementById('menu-toggle');
@@ -66,11 +160,11 @@
       isOpen = true;
       clearTimeout(closeTimer);
       menu.classList.remove('hidden');
-      // Force reflow so max-height transition runs from 0
       void menu.offsetWidth;
       menu.classList.add('open');
       toggle.setAttribute('aria-expanded', 'true');
       toggle.setAttribute('aria-label', 'Close menu');
+      document.body.classList.add('menu-open');
       lockScroll();
 
       const firstFocusable = menu.querySelector('a, button, [tabindex]:not([tabindex="-1"])');
@@ -83,10 +177,9 @@
       menu.classList.remove('open');
       toggle.setAttribute('aria-expanded', 'false');
       toggle.setAttribute('aria-label', 'Open menu');
+      document.body.classList.remove('menu-open');
       unlockScroll();
 
-      // Use transitionend, with a fallback timeout if the transition
-      // doesn't fire (e.g. reduced-motion short-circuit).
       let finished = false;
       const finish = () => {
         if (finished) return;
@@ -118,7 +211,6 @@
       closeMenu({ returnFocus: false });
     });
 
-    // Focus trap
     menu.addEventListener('keydown', (e) => {
       if (e.key !== 'Tab' || !isOpen) return;
       const focusables = menu.querySelectorAll(
@@ -136,12 +228,10 @@
       }
     });
 
-    // Close when a nav link is followed
     menu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => closeMenu({ returnFocus: false }));
     });
 
-    // Safety: if viewport grows past lg, reset state
     const mql = window.matchMedia('(min-width: 1024px)');
     const onWide = (e) => { if (e.matches && isOpen) closeMenu({ returnFocus: false }); };
     if (typeof mql.addEventListener === 'function') mql.addEventListener('change', onWide);
@@ -149,10 +239,8 @@
   }
 
   /* -----------------------------------------------------------
-     2. Menu filtering
-        - Toggles .hidden (display:none). The CSS animation on
-          .menu-card restarts automatically on display change.
-        - Announced via the #menu-status live region.
+     3. Menu filtering
+        Toggles .hidden; announces result count via #menu-status.
      ----------------------------------------------------------- */
   function initMenuFilter() {
     const buttons = document.querySelectorAll('.filter-btn');
@@ -194,33 +282,105 @@
   }
 
   /* -----------------------------------------------------------
-     3. Spice selectors
-        The wrapping <label class="spice-field"> provides the
-        accessible name for each <select> — no JS association
-        needed. This only rewrites the WhatsApp CTA link on change.
+     4. Back-to-top button
+        Appears after 600px of scroll. Smooth scrolls to top
+        (respects reduced motion) and moves focus back to the H1
+        for keyboard / AT users. Hidden while the mobile menu is
+        open via the body.menu-open class.
      ----------------------------------------------------------- */
-  function initSpiceSelectors() {
-    document.querySelectorAll('.menu-card[data-spice="true"]').forEach(card => {
-      const select = card.querySelector('.spice-select');
-      const cta = card.querySelector('.order-cta');
-      if (!select || !cta) return;
+  function initBackToTop() {
+    const btn = document.getElementById('back-to-top');
+    if (!btn) return;
 
-      const item = card.getAttribute('data-item') || 'this dish';
-      const price = card.getAttribute('data-price') || '';
+    const SHOW_AFTER = 600;
+    let ticking = false;
 
-      const update = () => {
-        const message = `Hi Redwood! I'd like the ${item} (${price}) — ${select.value}.`;
-        cta.href = `https://wa.me/254702555093?text=${encodeURIComponent(message)}`;
-      };
+    const update = () => {
+      const visible = window.scrollY > SHOW_AFTER;
+      btn.classList.toggle('is-visible', visible);
+      if (visible) {
+        btn.removeAttribute('tabindex');
+      } else {
+        btn.setAttribute('tabindex', '-1');
+      }
+      ticking = false;
+    };
 
-      update();
-      select.addEventListener('change', update);
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(update);
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    update();
+
+    btn.addEventListener('click', () => {
+      const behavior = prefersReducedMotion() ? 'auto' : 'smooth';
+      window.scrollTo({ top: 0, behavior });
+
+      const target = document.getElementById('hero-heading');
+      if (target) {
+        if (!target.hasAttribute('tabindex')) {
+          target.setAttribute('tabindex', '-1');
+          target.addEventListener('blur', function once() {
+            target.removeAttribute('tabindex');
+            target.removeEventListener('blur', once);
+          });
+        }
+        target.focus({ preventScroll: true });
+      }
     });
   }
 
   /* -----------------------------------------------------------
-     4. Scroll reveal
-        Menu cards are excluded — they own their own CSS animation.
+     5. FAQ accordion
+        Layered on top of native <details>:
+        - Click outside any open item closes all open items
+        - Escape closes the currently open item, focus returns
+          to its summary
+        - Opening a second item closes the first (true accordion)
+     ----------------------------------------------------------- */
+  function initFaqAccordion() {
+    const faqItems = document.querySelectorAll('.faq-item');
+    if (!faqItems.length) return;
+
+    const closeAll = (except) => {
+      faqItems.forEach(item => {
+        if (item !== except) item.removeAttribute('open');
+      });
+    };
+
+    document.addEventListener('click', (e) => {
+      const clickedItem = e.target.closest('.faq-item');
+
+      if (!clickedItem) {
+        closeAll();
+        return;
+      }
+
+      const summary = e.target.closest('summary');
+      if (summary && !clickedItem.hasAttribute('open')) {
+        closeAll(clickedItem);
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key !== 'Escape') return;
+      const openItem = document.querySelector('.faq-item[open]');
+      if (!openItem) return;
+      openItem.removeAttribute('open');
+      const summary = openItem.querySelector('summary');
+      if (summary) summary.focus();
+    });
+  }
+
+  /* -----------------------------------------------------------
+     6. Scroll reveal
+        Menu cards own their own CSS animation, so they're excluded.
+        A 2-second failsafe reveals everything if the observer
+        callback never fires.
      ----------------------------------------------------------- */
   function initScrollReveal() {
     if (!('IntersectionObserver' in window)) return;
@@ -253,12 +413,16 @@
     });
 
     targets.forEach(el => observer.observe(el));
+
+    setTimeout(() => {
+      targets.forEach(el => el.classList.remove('reveal-hidden'));
+    }, 2000);
   }
 
   /* -----------------------------------------------------------
-     5. Smooth anchor scroll
+     7. Smooth anchor scroll
         Reads header height dynamically. Respects reduced motion.
-        Moves focus to the target for keyboard/AT users.
+        Moves focus to the target for keyboard / AT users.
      ----------------------------------------------------------- */
   function initSmoothScroll() {
     const header = document.querySelector('.header-bg');
@@ -296,7 +460,7 @@
   }
 
   /* -----------------------------------------------------------
-     6. Inject current weekday into special headline
+     8. Inject current weekday into special headline
      ----------------------------------------------------------- */
   function initSpecialDay() {
     const el = document.getElementById('special-day');
@@ -306,11 +470,14 @@
   }
 
   /* -----------------------------------------------------------
-     7. Append "(opens in a new tab)" hint to external links
-        programmatically so we don't have to repeat it in HTML.
+     9. Append "(opens in a new tab)" hint to external links
+        Skipped for wa.me links — WhatsApp opening in a new tab is
+        the expected behaviour and the hint just adds noise.
      ----------------------------------------------------------- */
   function initExternalLinkHints() {
     document.querySelectorAll('a[target="_blank"]').forEach(link => {
+      const href = link.getAttribute('href') || '';
+      if (href.startsWith('https://wa.me/')) return;
       if (link.querySelector('.sr-only')) return;
       const span = document.createElement('span');
       span.className = 'sr-only';
@@ -320,7 +487,7 @@
   }
 
   /* -----------------------------------------------------------
-     8. Current year in footer
+     10. Current year in footer
      ----------------------------------------------------------- */
   function initYear() {
     const el = document.getElementById('year');

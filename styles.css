@@ -10,11 +10,10 @@
 :root {
   color-scheme: dark;
 
-  /* Brand palette — named by role, not by number */
-  --brand:            #E53935;  /* accents, borders (non-text UI, ≥3:1 on charcoal) */
-  --brand-bg:         #C62828;  /* backgrounds behind white text (≥4.5:1 with #fff)  */
-  --brand-bg-hover:   #D32F2F;  /* hover state, still ≥4.5:1 with #fff              */
-  --brand-on-dark:    #FF6B68;  /* red text on dark backgrounds (≥4.5:1)            */
+  --brand:            #E53935;
+  --brand-bg:         #C62828;
+  --brand-bg-hover:   #D32F2F;
+  --brand-on-dark:    #FF6B68;
   --brand-accent:     #F5C518;
   --brand-accent-hover: #FFB300;
 
@@ -26,9 +25,6 @@
   --border:    rgba(255, 255, 255, 0.1);
   --overlay-start: rgba(26, 24, 20, 0.3);
   --overlay-end:   rgba(26, 24, 20, 0.78);
-
-  --whatsapp-green: #1DA851;
-  --whatsapp-green-hover: #178C42;
 
   --font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -47,10 +43,7 @@
 
 html {
   scroll-behavior: smooth;
-  /* Native anchor clicks land below the sticky header */
   scroll-padding-top: 5rem;
-  /* Defensive: prevents accidental horizontal scroll (fixed-position safe
-     because we apply it on the root, not body) */
   overflow-x: hidden;
 }
 
@@ -80,7 +73,6 @@ button { font-family: inherit; }
 
 figure { margin: 0; }
 
-/* Any focus target inside a section keeps its heading clear of the sticky header */
 :target,
 section[id],
 main[id] { scroll-margin-top: 5rem; }
@@ -191,7 +183,7 @@ main[id] { scroll-margin-top: 5rem; }
 .h-full { height: 100%; }
 .min-h-screen {
   min-height: 100vh;
-  min-height: 100dvh; /* iOS / Android URL-bar correct */
+  min-height: 100dvh;
 }
 
 .max-w-xs { max-width: 20rem; }
@@ -246,8 +238,6 @@ main[id] { scroll-margin-top: 5rem; }
   border-width: 0;
 }
 
-/* Menu / signature card titles use Inter for scannability.
-   Playfair is reserved for H1 / H2. */
 .card-title {
   font-family: var(--font-body);
   letter-spacing: -0.005em;
@@ -323,7 +313,6 @@ main[id] { scroll-margin-top: 5rem; }
 
 /* =============================================================
    11. COMPONENT — Buttons
-   All interactive controls enforce a 44px minimum tap height
    ============================================================= */
 .btn-primary {
   background-color: var(--brand-bg);
@@ -366,7 +355,6 @@ main[id] { scroll-margin-top: 5rem; }
   outline-offset: 3px;
 }
 
-/* Hover effects gated to real pointer devices */
 @media (hover: hover) and (pointer: fine) {
   .btn-primary:hover {
     background-color: var(--brand-bg-hover);
@@ -387,7 +375,7 @@ main[id] { scroll-margin-top: 5rem; }
 }
 
 /* =============================================================
-   12. COMPONENT — Filter buttons (min 44px tap target)
+   12. COMPONENT — Filter buttons
    ============================================================= */
 .filter-btn {
   border: 1px solid var(--brand);
@@ -474,7 +462,7 @@ main[id] { scroll-margin-top: 5rem; }
 }
 
 /* =============================================================
-   17. COMPONENT — Spice selector (min 44px tap target)
+   17. COMPONENT — Spice selector
    ============================================================= */
 .spice-field { display: block; margin-top: 0.5rem; }
 
@@ -622,43 +610,62 @@ main[id] { scroll-margin-top: 5rem; }
 }
 
 /* =============================================================
-   21. COMPONENT — Floating WhatsApp button
-   On mobile the FAB sits above the sticky order bar
+   21. COMPONENT — Back-to-top button
+   Replaces the previous floating WhatsApp FAB. Appears only
+   after the user has scrolled past the hero. Hidden while the
+   mobile menu is open.
    ============================================================= */
-.wa-float {
+.back-to-top {
   position: fixed;
   bottom: 1.5rem;
   right: 1.5rem;
-  width: 60px;
-  height: 60px;
-  background-color: var(--whatsapp-green);
+  width: 52px;
+  height: 52px;
+  border: none;
   border-radius: 50%;
-  display: flex;
+  background-color: var(--brand-bg);
+  color: #fff;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 24px rgba(29, 168, 81, 0.4);
+  cursor: pointer;
   z-index: 50;
-  text-decoration: none;
-  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-  animation: wa-pulse 1.6s ease-in-out 3;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(14px);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease,
+    visibility 0s linear 0.25s;
 }
-.wa-float:focus-visible {
-  outline: 3px solid #fff;
-  outline-offset: 4px;
-  animation: none;
+.back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition-delay: 0s, 0s, 0s, 0s, 0s;
+}
+.back-to-top:focus-visible {
+  outline: 3px solid var(--brand-accent);
+  outline-offset: 3px;
 }
 @media (hover: hover) and (pointer: fine) {
-  .wa-float:hover {
-    background-color: var(--whatsapp-green-hover);
-    transform: scale(1.12);
-    box-shadow: 0 12px 28px rgba(29, 168, 81, 0.5);
-    animation: none;
+  .back-to-top.is-visible:hover {
+    background-color: var(--brand-bg-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(198, 40, 40, 0.5);
   }
 }
-@keyframes wa-pulse {
-  0%   { transform: scale(1); }
-  50%  { transform: scale(1.08); }
-  100% { transform: scale(1); }
+
+/* Hide floating UI while the mobile menu is open so it doesn't
+   layer on top of the expanded nav. */
+body.menu-open .back-to-top,
+body.menu-open .mobile-order-bar {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 /* =============================================================
@@ -717,12 +724,11 @@ main[id] { scroll-margin-top: 5rem; }
 
 /* =============================================================
    26. COMPONENT — Sticky mobile order bar
-   Hidden by default. Shown only < 1024px via media query below.
    ============================================================= */
 .mobile-order-bar { display: none; }
 
 /* =============================================================
-   27. COMPONENT — Footer social icons (min 44px tap target)
+   27. COMPONENT — Footer social icons
    ============================================================= */
 .footer-icon {
   display: inline-flex;
@@ -832,8 +838,6 @@ main[id] { scroll-margin-top: 5rem; }
 
 /* =============================================================
    33. MOBILE ONLY — sticky order bar (< 1024px)
-   Lives here (not in a max-width block above) because it must
-   override the .hidden pattern used elsewhere.
    ============================================================= */
 @media (max-width: 1023px) {
   .mobile-order-bar {
@@ -895,15 +899,14 @@ main[id] { scroll-margin-top: 5rem; }
     .mobile-order-bar__secondary:hover { background-color: rgba(255, 255, 255, 0.14); }
   }
 
-  /* Push content above the fixed bar so nothing is obscured */
   body { padding-bottom: calc(var(--mobile-bar-h) + env(safe-area-inset-bottom, 0px)); }
 
-  /* Float the FAB above the sticky bar so they don't overlap */
-  .wa-float {
+  /* Float the back-to-top button above the sticky order bar */
+  .back-to-top {
     bottom: calc(var(--mobile-bar-h) + 16px + env(safe-area-inset-bottom, 0px));
+    right: 12px;
   }
 
-  /* Compensate the scroll-margin so anchors don't land under the bar */
   :target,
   section[id],
   main[id] { scroll-margin-top: 5rem; }
@@ -919,7 +922,6 @@ main[id] { scroll-margin-top: 5rem; }
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-  .wa-float { animation: none; }
   .faq-item[open] p { animation: none; }
   .menu-card { animation: none; }
   html { scroll-behavior: auto; }
@@ -935,7 +937,7 @@ main[id] { scroll-margin-top: 5rem; }
    ============================================================= */
 @media print {
   .header-bg,
-  .wa-float,
+  .back-to-top,
   .mobile-order-bar,
   .btn-primary,
   .btn-secondary,
